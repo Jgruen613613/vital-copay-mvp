@@ -2,21 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-interface MatchedProgram {
-  program_name: string;
-  fund_status: string;
-}
-
 interface Inquiry {
   id: number;
-  first_name: string;
   email: string;
-  phone: string;
-  state_of_residence: string;
-  insurance_type: string;
-  medication_name: string;
-  medication_brands: string[];
-  matched_programs: MatchedProgram[];
+  preferred_call_time: string | null;
+  insurance_type: string | null;
+  consent_to_contact: boolean;
   status: string;
   specialist_notes: string | null;
   created_at: string;
@@ -30,6 +21,21 @@ const STATUS_COLORS: Record<string, string> = {
   contacted: "bg-yellow-100 text-yellow-800",
   enrolled: "bg-green-100 text-green-800",
   closed: "bg-gray-100 text-gray-800",
+};
+
+const INSURANCE_LABELS: Record<string, string> = {
+  commercial: "Commercial",
+  medicare: "Medicare",
+  medicaid: "Medicaid",
+  dual_eligible: "Dual Eligible",
+  uninsured: "Uninsured",
+};
+
+const CALL_TIME_LABELS: Record<string, string> = {
+  morning: "Morning (9-12)",
+  afternoon: "Afternoon (12-5)",
+  evening: "Evening (5-8)",
+  anytime: "Anytime",
 };
 
 export default function AdminQueuePage() {
@@ -108,7 +114,7 @@ export default function AdminQueuePage() {
               onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-sm font-medium capitalize transition-colors ${
                 filter === f
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#1a365d] text-white"
                   : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"
               }`}
             >
@@ -135,19 +141,17 @@ export default function AdminQueuePage() {
                     {new Date(inq.created_at).toLocaleDateString()}
                   </span>
                   <span className="font-medium text-gray-900 truncate">
-                    {inq.first_name}
-                  </span>
-                  <span className="text-sm text-gray-500 truncate hidden sm:inline">
-                    {inq.medication_brands?.[0] || inq.medication_name}
+                    {inq.email}
                   </span>
                   <span className="text-xs text-gray-400 hidden sm:inline">
-                    {inq.insurance_type}
+                    {inq.preferred_call_time
+                      ? CALL_TIME_LABELS[inq.preferred_call_time] || inq.preferred_call_time
+                      : "—"}
                   </span>
                   <span className="text-xs text-gray-400 hidden sm:inline">
-                    {inq.state_of_residence}
-                  </span>
-                  <span className="text-xs text-gray-400 hidden sm:inline">
-                    {inq.matched_programs?.length || 0} programs
+                    {inq.insurance_type
+                      ? INSURANCE_LABELS[inq.insurance_type] || inq.insurance_type
+                      : "—"}
                   </span>
                   <span
                     className={`ml-auto px-2 py-0.5 rounded text-xs font-medium shrink-0 ${
@@ -167,42 +171,22 @@ export default function AdminQueuePage() {
                         {inq.email}
                       </div>
                       <div>
-                        <span className="text-gray-500">Phone:</span>{" "}
-                        {inq.phone}
+                        <span className="text-gray-500">Preferred call time:</span>{" "}
+                        {inq.preferred_call_time
+                          ? CALL_TIME_LABELS[inq.preferred_call_time] || inq.preferred_call_time
+                          : "Not specified"}
                       </div>
                       <div>
-                        <span className="text-gray-500">Medication:</span>{" "}
-                        {inq.medication_name} ({inq.medication_brands?.join(", ")})
+                        <span className="text-gray-500">Insurance:</span>{" "}
+                        {inq.insurance_type
+                          ? INSURANCE_LABELS[inq.insurance_type] || inq.insurance_type
+                          : "Not specified"}
                       </div>
                       <div>
-                        <span className="text-gray-500">State:</span>{" "}
-                        {inq.state_of_residence}
+                        <span className="text-gray-500">Consent:</span>{" "}
+                        {inq.consent_to_contact ? "Yes" : "No"}
                       </div>
                     </div>
-
-                    {inq.matched_programs && inq.matched_programs.length > 0 && (
-                      <div>
-                        <p className="text-sm font-medium text-gray-700 mb-1">
-                          Matched Programs:
-                        </p>
-                        <ul className="text-sm space-y-1">
-                          {inq.matched_programs.map((p, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <span
-                                className={`w-2 h-2 rounded-full ${
-                                  p.fund_status === "open"
-                                    ? "bg-green-500"
-                                    : p.fund_status === "waitlist"
-                                    ? "bg-yellow-500"
-                                    : "bg-red-500"
-                                }`}
-                              />
-                              {p.program_name}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
 
                     <div>
                       <label className="text-sm font-medium text-gray-700">
@@ -246,7 +230,7 @@ export default function AdminQueuePage() {
                     <button
                       onClick={() => handleSave(inq.id)}
                       disabled={saving === inq.id}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
+                      className="px-4 py-2 bg-[#1a365d] text-white rounded-lg text-sm font-medium hover:bg-[#2a4a7f] disabled:opacity-50"
                     >
                       {saving === inq.id ? "Saving..." : "Save"}
                     </button>

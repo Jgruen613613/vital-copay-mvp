@@ -24,11 +24,13 @@ export async function GET(request: NextRequest) {
           p.eligible_insurance_types.includes(insuranceType)
       )
       .sort((a, b) => (statusOrder[a.fund_status] ?? 3) - (statusOrder[b.fund_status] ?? 3))
-      .map(({ id, program_name, program_type, estimated_monthly_savings, eligibility_summary, fund_status }) => ({
+      .map(({ id, program_name, program_type, estimated_monthly_savings, estimated_annual_savings, likelihood_can_help, eligibility_summary, fund_status }) => ({
         id,
         program_name,
         program_type,
         estimated_monthly_savings,
+        estimated_annual_savings,
+        likelihood_can_help,
         eligibility_summary,
         fund_status,
       }));
@@ -38,7 +40,7 @@ export async function GET(request: NextRequest) {
   const { data, error } = await supabase
     .from("medication_assistance_programs")
     .select(
-      "id, program_name, program_type, estimated_monthly_savings, eligibility_summary, fund_status, eligible_insurance_types"
+      "id, program_name, program_type, estimated_monthly_savings, estimated_annual_savings, likelihood_can_help, eligibility_summary, fund_status, eligible_insurance_types"
     )
     .eq("medication_id", medId);
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ElevenLabsWidget } from "@/components/ElevenLabsWidget";
 
@@ -7,16 +7,18 @@ export const metadata: Metadata = {
   description: "Find savings on your specialty medication",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
+    <html lang="en" className="scroll-smooth">
       <body className="bg-gray-50 text-gray-900 min-h-screen">
         {children}
         <ElevenLabsWidget />
