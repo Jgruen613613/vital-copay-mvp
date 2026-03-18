@@ -1,11 +1,15 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import Script from "next/script";
+
+const AGENT_ID = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID ?? "";
 
 export function ElevenLabsWidget() {
   const pathname = usePathname();
   const [showPopup, setShowPopup] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Listen for custom event from "Talk to Specialist" button
   useEffect(() => {
@@ -16,6 +20,19 @@ export function ElevenLabsWidget() {
     return () => window.removeEventListener("open-elevenlabs", handleOpen);
   }, []);
 
+  // Mount the custom element via DOM API so attributes are set correctly
+  // (React 18 does not forward props to custom elements as attributes)
+  const mountWidget = useCallback((node: HTMLDivElement | null) => {
+    if (!node || !AGENT_ID) return;
+    // Avoid duplicate mounts
+    if (node.querySelector("elevenlabs-convai")) return;
+    const el = document.createElement("elevenlabs-convai");
+    el.setAttribute("agent-id", AGENT_ID);
+    el.style.height = "100%";
+    el.style.width = "100%";
+    node.appendChild(el);
+  }, []);
+
   // Do not show on admin pages
   if (pathname.startsWith("/admin")) {
     return null;
@@ -23,6 +40,12 @@ export function ElevenLabsWidget() {
 
   return (
     <>
+      {/* Load ElevenLabs Convai widget script */}
+      <Script
+        src="https://elevenlabs.io/convai-widget/index.js"
+        strategy="lazyOnload"
+      />
+
       {/* Floating button — bottom-right */}
       <button
         onClick={() => setShowPopup(!showPopup)}
@@ -41,8 +64,8 @@ export function ElevenLabsWidget() {
 
       {/* ElevenLabs widget popup */}
       {showPopup && (
-        <div className="fixed bottom-24 right-6 z-50 w-80 h-96 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
-          <div className="bg-[#1a365d] text-white px-4 py-3 flex items-center justify-between">
+        <div className="fixed bottom-24 right-6 z-50 w-80 h-[480px] bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
+          <div className="bg-[#1a365d] text-white px-4 py-3 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -59,26 +82,7 @@ export function ElevenLabsWidget() {
               </svg>
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center text-center p-6">
-            {/* ElevenLabs agent embed — replace with actual embed script */}
-            {/*
-              To activate, add the ElevenLabs Convai widget script here:
-              <elevenlabs-convai agent-id={process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID}></elevenlabs-convai>
-              <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
-            */}
-            <div>
-              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-[#1a365d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                </svg>
-              </div>
-              <p className="font-medium text-gray-900 mb-1">Voice Agent Coming Soon</p>
-              <p className="text-sm text-gray-500">
-                Replace this placeholder with your ElevenLabs agent embed
-                (Agent ID: {process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "not configured"})
-              </p>
-            </div>
-          </div>
+          <div ref={mountWidget} className="flex-1 overflow-hidden" />
         </div>
       )}
     </>
