@@ -1,13 +1,15 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Script from "next/script";
+
+const AGENT_ID = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID ?? "";
 
 export function ElevenLabsWidget() {
   const pathname = usePathname();
   const [showPopup, setShowPopup] = useState(false);
-  const widgetRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Listen for custom event from "Talk to Specialist" button
   useEffect(() => {
@@ -18,12 +20,23 @@ export function ElevenLabsWidget() {
     return () => window.removeEventListener("open-elevenlabs", handleOpen);
   }, []);
 
+  // Mount the custom element via DOM API so attributes are set correctly
+  // (React 18 does not forward props to custom elements as attributes)
+  const mountWidget = useCallback((node: HTMLDivElement | null) => {
+    if (!node || !AGENT_ID) return;
+    // Avoid duplicate mounts
+    if (node.querySelector("elevenlabs-convai")) return;
+    const el = document.createElement("elevenlabs-convai");
+    el.setAttribute("agent-id", AGENT_ID);
+    el.style.height = "100%";
+    el.style.width = "100%";
+    node.appendChild(el);
+  }, []);
+
   // Do not show on admin pages
   if (pathname.startsWith("/admin")) {
     return null;
   }
-
-  const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
 
   return (
     <>
@@ -69,10 +82,7 @@ export function ElevenLabsWidget() {
               </svg>
             </button>
           </div>
-          <div ref={widgetRef} className="flex-1 overflow-hidden">
-            {/* @ts-expect-error - elevenlabs-convai is a custom element */}
-            <elevenlabs-convai agent-id={agentId} style={{ height: "100%", width: "100%" }}></elevenlabs-convai>
-          </div>
+          <div ref={mountWidget} className="flex-1 overflow-hidden" />
         </div>
       )}
     </>
