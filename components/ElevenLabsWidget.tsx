@@ -4,7 +4,8 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Script from "next/script";
 
-const AGENT_ID = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID ?? "";
+const AGENT_ID =
+  process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "agent_0001kkf2z3t2e2svmjvqjef";
 
 export function ElevenLabsWidget() {
   const pathname = usePathname();
