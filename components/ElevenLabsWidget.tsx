@@ -1,16 +1,23 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 
-const AGENT_ID =
-  process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "agent_0001kkf2z3t2e2svmjvqjef";
+function resolveAgentId(): string {
+  const raw = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "0001kkf2z3t2e2svmjvqjef95tc3";
+  // Strip "agent_" prefix if present — the widget adds it internally
+  const bare = raw.startsWith("agent_") ? raw.slice(6) : raw;
+  return bare;
+}
+
+const AGENT_ID = resolveAgentId();
 
 export function ElevenLabsWidget() {
   const pathname = usePathname();
   const [showPopup, setShowPopup] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [scriptReady, setScriptReady] = useState(false);
+  const widgetContainerRef = useRef<HTMLDivElement>(null);
 
   // Listen for custom event from "Talk to Specialist" button
   useEffect(() => {
@@ -21,18 +28,32 @@ export function ElevenLabsWidget() {
     return () => window.removeEventListener("open-elevenlabs", handleOpen);
   }, []);
 
-  // Mount the custom element via DOM API so attributes are set correctly
-  // (React 18 does not forward props to custom elements as attributes)
-  const mountWidget = useCallback((node: HTMLDivElement | null) => {
-    if (!node || !AGENT_ID) return;
-    // Avoid duplicate mounts
-    if (node.querySelector("elevenlabs-convai")) return;
+  // Check if the script was already loaded (e.g. cached from prior navigation)
+  useEffect(() => {
+    if (customElements.get("elevenlabs-convai")) {
+      setScriptReady(true);
+    }
+  }, []);
+
+  // Mount/remount the widget element whenever the popup opens AND the script is ready
+  useEffect(() => {
+    const container = widgetContainerRef.current;
+    if (!showPopup || !scriptReady || !container || !AGENT_ID) return;
+
+    // Clear any previous widget instance
+    container.innerHTML = "";
+
     const el = document.createElement("elevenlabs-convai");
     el.setAttribute("agent-id", AGENT_ID);
     el.style.height = "100%";
     el.style.width = "100%";
-    node.appendChild(el);
-  }, []);
+    container.appendChild(el);
+
+    // Cleanup on close
+    return () => {
+      container.innerHTML = "";
+    };
+  }, [showPopup, scriptReady]);
 
   // Do not show on admin pages
   if (pathname.startsWith("/admin")) {
@@ -41,10 +62,11 @@ export function ElevenLabsWidget() {
 
   return (
     <>
-      {/* Load ElevenLabs Convai widget script */}
+      {/* Load ElevenLabs Convai widget script early */}
       <Script
         src="https://elevenlabs.io/convai-widget/index.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
+        onLoad={() => setScriptReady(true)}
       />
 
       {/* Floating button — bottom-right */}
@@ -83,7 +105,13 @@ export function ElevenLabsWidget() {
               </svg>
             </button>
           </div>
-          <div ref={mountWidget} className="flex-1 overflow-hidden" />
+          {scriptReady ? (
+            <div ref={widgetContainerRef} className="flex-1 overflow-hidden" />
+          ) : (
+            <div className="flex-1 flex items-center justify-center text-gray-400 text-sm">
+              Loading voice agent...
+            </div>
+          )}
         </div>
       )}
     </>
