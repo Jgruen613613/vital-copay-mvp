@@ -4,12 +4,12 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 
+const AGENT_ID = "agent_0001kkf2z3t2e2svmjvqjef";
+
 export function ElevenLabsWidget() {
   const pathname = usePathname();
   const [showPopup, setShowPopup] = useState(false);
   const [scriptReady, setScriptReady] = useState(false);
-  const [signedUrl, setSignedUrl] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
   const widgetContainerRef = useRef<HTMLDivElement>(null);
 
   // Listen for custom event from "Talk to Specialist" button
@@ -28,46 +28,15 @@ export function ElevenLabsWidget() {
     }
   }, []);
 
-  // Fetch a signed URL from our server when the popup opens
-  useEffect(() => {
-    if (!showPopup) return;
-
-    let cancelled = false;
-    setError(null);
-    setSignedUrl(null);
-
-    async function fetchSignedUrl() {
-      try {
-        const res = await fetch("/api/elevenlabs-signed-url");
-        if (!res.ok) {
-          throw new Error(`Server returned ${res.status}`);
-        }
-        const data = await res.json();
-        if (!cancelled && data.signed_url) {
-          setSignedUrl(data.signed_url);
-        } else if (!cancelled) {
-          throw new Error("No signed URL returned");
-        }
-      } catch (err) {
-        if (!cancelled) {
-          setError("Unable to connect to voice agent. Please try the callback option.");
-        }
-      }
-    }
-
-    fetchSignedUrl();
-    return () => { cancelled = true; };
-  }, [showPopup]);
-
-  // Mount the widget once we have both the script and a signed URL
+  // Mount the widget once we have the script ready and popup is open
   useEffect(() => {
     const container = widgetContainerRef.current;
-    if (!showPopup || !scriptReady || !signedUrl || !container) return;
+    if (!showPopup || !scriptReady || !container) return;
 
     container.innerHTML = "";
 
     const el = document.createElement("elevenlabs-convai");
-    el.setAttribute("signed-url", signedUrl);
+    el.setAttribute("agent-id", AGENT_ID);
     el.style.height = "100%";
     el.style.width = "100%";
     container.appendChild(el);
@@ -75,15 +44,12 @@ export function ElevenLabsWidget() {
     return () => {
       container.innerHTML = "";
     };
-  }, [showPopup, scriptReady, signedUrl]);
+  }, [showPopup, scriptReady]);
 
   // Do not show on admin pages
   if (pathname.startsWith("/admin")) {
     return null;
   }
-
-  // Determine loading state for the popup body
-  const isLoading = !scriptReady || (!signedUrl && !error);
 
   return (
     <>
@@ -137,11 +103,7 @@ export function ElevenLabsWidget() {
             </button>
           </div>
 
-          {error ? (
-            <div className="flex-1 flex items-center justify-center p-4 text-center">
-              <p className="text-red-500 text-sm">{error}</p>
-            </div>
-          ) : isLoading ? (
+          {!scriptReady ? (
             <div className="flex-1 flex items-center justify-center text-gray-400 text-sm">
               Connecting to Sarah...
             </div>
