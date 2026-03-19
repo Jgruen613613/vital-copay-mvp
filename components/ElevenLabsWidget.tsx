@@ -56,11 +56,19 @@ export function ElevenLabsWidget() {
 
   return (
     <>
-      {/* Load ElevenLabs Convai widget script early */}
+      {/* Load ElevenLabs Convai widget script — jsdelivr CDN with version pin */}
       <Script
-        src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+        src="https://cdn.jsdelivr.net/npm/@elevenlabs/convai-widget-embed@0.3.0/dist/bundle.js"
         strategy="afterInteractive"
         onLoad={() => setScriptReady(true)}
+        onError={() => {
+          // Fallback to unpkg if jsdelivr fails
+          const s = document.createElement("script");
+          s.src = "https://unpkg.com/@elevenlabs/convai-widget-embed@0.3.0";
+          s.async = true;
+          s.onload = () => setScriptReady(true);
+          document.head.appendChild(s);
+        }}
       />
 
       {/* Floating button — bottom-right */}
