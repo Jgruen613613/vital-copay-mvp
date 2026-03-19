@@ -4,8 +4,14 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 
-const AGENT_ID =
-  process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "agent_0001kkf2z3t2e2svmjvqjef";
+function resolveAgentId(): string {
+  const raw = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "0001kkf2z3t2e2svmjvqjef95tc3";
+  // Strip "agent_" prefix if present — the widget adds it internally
+  const bare = raw.startsWith("agent_") ? raw.slice(6) : raw;
+  return bare;
+}
+
+const AGENT_ID = resolveAgentId();
 
 export function ElevenLabsWidget() {
   const pathname = usePathname();
