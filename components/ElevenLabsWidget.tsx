@@ -4,19 +4,12 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 
-function resolveAgentId(): string {
-  const raw = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "0001kkf2z3t2e2svmjvqjef95tc3";
-  // Strip "agent_" prefix if present — the widget adds it internally
-  const bare = raw.startsWith("agent_") ? raw.slice(6) : raw;
-  return bare;
-}
-
-const AGENT_ID = resolveAgentId();
-
 export function ElevenLabsWidget() {
   const pathname = usePathname();
   const [showPopup, setShowPopup] = useState(false);
   const [scriptReady, setScriptReady] = useState(false);
+  const [signedUrl, setSignedUrl] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const widgetContainerRef = useRef<HTMLDivElement>(null);
 
   // Listen for custom event from "Talk to Specialist" button
@@ -35,38 +28,77 @@ export function ElevenLabsWidget() {
     }
   }, []);
 
-  // Mount/remount the widget element whenever the popup opens AND the script is ready
+  // Fetch a signed URL from our server when the popup opens
+  useEffect(() => {
+    if (!showPopup) return;
+
+    let cancelled = false;
+    setError(null);
+    setSignedUrl(null);
+
+    async function fetchSignedUrl() {
+      try {
+        const res = await fetch("/api/elevenlabs-signed-url");
+        if (!res.ok) {
+          throw new Error(`Server returned ${res.status}`);
+        }
+        const data = await res.json();
+        if (!cancelled && data.signed_url) {
+          setSignedUrl(data.signed_url);
+        } else if (!cancelled) {
+          throw new Error("No signed URL returned");
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError("Unable to connect to voice agent. Please try the callback option.");
+        }
+      }
+    }
+
+    fetchSignedUrl();
+    return () => { cancelled = true; };
+  }, [showPopup]);
+
+  // Mount the widget once we have both the script and a signed URL
   useEffect(() => {
     const container = widgetContainerRef.current;
-    if (!showPopup || !scriptReady || !container || !AGENT_ID) return;
+    if (!showPopup || !scriptReady || !signedUrl || !container) return;
 
-    // Clear any previous widget instance
     container.innerHTML = "";
 
     const el = document.createElement("elevenlabs-convai");
-    el.setAttribute("agent-id", AGENT_ID);
+    el.setAttribute("signed-url", signedUrl);
     el.style.height = "100%";
     el.style.width = "100%";
     container.appendChild(el);
 
-    // Cleanup on close
     return () => {
       container.innerHTML = "";
     };
-  }, [showPopup, scriptReady]);
+  }, [showPopup, scriptReady, signedUrl]);
 
   // Do not show on admin pages
   if (pathname.startsWith("/admin")) {
     return null;
   }
 
+  // Determine loading state for the popup body
+  const isLoading = !scriptReady || (!signedUrl && !error);
+
   return (
     <>
-      {/* Load ElevenLabs Convai widget script early */}
+      {/* Load ElevenLabs Convai widget script */}
       <Script
-        src="https://elevenlabs.io/convai-widget/index.js"
+        src="https://cdn.jsdelivr.net/npm/@elevenlabs/convai-widget-embed@0.3.0/dist/bundle.js"
         strategy="afterInteractive"
         onLoad={() => setScriptReady(true)}
+        onError={() => {
+          const s = document.createElement("script");
+          s.src = "https://unpkg.com/@elevenlabs/convai-widget-embed@0.3.0";
+          s.async = true;
+          s.onload = () => setScriptReady(true);
+          document.head.appendChild(s);
+        }}
       />
 
       {/* Floating button — bottom-right */}
@@ -79,7 +111,6 @@ export function ElevenLabsWidget() {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
-        {/* Tooltip */}
         <span className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           Talk to Sarah
         </span>
@@ -105,12 +136,17 @@ export function ElevenLabsWidget() {
               </svg>
             </button>
           </div>
-          {scriptReady ? (
-            <div ref={widgetContainerRef} className="flex-1 overflow-hidden" />
-          ) : (
-            <div className="flex-1 flex items-center justify-center text-gray-400 text-sm">
-              Loading voice agent...
+
+          {error ? (
+            <div className="flex-1 flex items-center justify-center p-4 text-center">
+              <p className="text-red-500 text-sm">{error}</p>
             </div>
+          ) : isLoading ? (
+            <div className="flex-1 flex items-center justify-center text-gray-400 text-sm">
+              Connecting to Sarah...
+            </div>
+          ) : (
+            <div ref={widgetContainerRef} className="flex-1 overflow-hidden" />
           )}
         </div>
       )}
