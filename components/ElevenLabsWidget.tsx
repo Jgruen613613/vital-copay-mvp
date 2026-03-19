@@ -1,50 +1,44 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Script from "next/script";
 
 const AGENT_ID = "agent_0001kkf2z3t2e2svmjvqjef";
 
 export function ElevenLabsWidget() {
   const pathname = usePathname();
-  const [showPopup, setShowPopup] = useState(false);
   const [scriptReady, setScriptReady] = useState(false);
-  const widgetContainerRef = useRef<HTMLDivElement>(null);
+  const [showWidget, setShowWidget] = useState(false);
 
   // Listen for custom event from "Talk to Specialist" button
   useEffect(() => {
     function handleOpen() {
-      setShowPopup(true);
+      setShowWidget(true);
     }
     window.addEventListener("open-elevenlabs", handleOpen);
     return () => window.removeEventListener("open-elevenlabs", handleOpen);
   }, []);
 
-  // Check if the script was already loaded (e.g. cached from prior navigation)
+  // Check if the script was already loaded
   useEffect(() => {
     if (customElements.get("elevenlabs-convai")) {
       setScriptReady(true);
     }
   }, []);
 
-  // Mount the widget once we have the script ready and popup is open
+  // Mount / unmount the widget element on the body
   useEffect(() => {
-    const container = widgetContainerRef.current;
-    if (!showPopup || !scriptReady || !container) return;
-
-    container.innerHTML = "";
+    if (!showWidget || !scriptReady) return;
 
     const el = document.createElement("elevenlabs-convai");
     el.setAttribute("agent-id", AGENT_ID);
-    el.style.height = "100%";
-    el.style.width = "100%";
-    container.appendChild(el);
+    document.body.appendChild(el);
 
     return () => {
-      container.innerHTML = "";
+      el.remove();
     };
-  }, [showPopup, scriptReady]);
+  }, [showWidget, scriptReady]);
 
   // Do not show on admin pages
   if (pathname.startsWith("/admin")) {
@@ -53,7 +47,6 @@ export function ElevenLabsWidget() {
 
   return (
     <>
-      {/* Load ElevenLabs Convai widget script */}
       <Script
         src="https://cdn.jsdelivr.net/npm/@elevenlabs/convai-widget-embed@0.3.0/dist/bundle.js"
         strategy="afterInteractive"
@@ -69,7 +62,7 @@ export function ElevenLabsWidget() {
 
       {/* Floating button — bottom-right */}
       <button
-        onClick={() => setShowPopup(!showPopup)}
+        onClick={() => setShowWidget(!showWidget)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#1a365d] text-white rounded-full shadow-lg hover:bg-[#2a4a7f] transition-colors flex items-center justify-center group"
         aria-label="Talk to Sarah"
         title="Talk to Sarah"
@@ -81,37 +74,6 @@ export function ElevenLabsWidget() {
           Talk to Sarah
         </span>
       </button>
-
-      {/* ElevenLabs widget popup */}
-      {showPopup && (
-        <div className="fixed bottom-24 right-6 z-50 w-80 h-[480px] bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
-          <div className="bg-[#1a365d] text-white px-4 py-3 flex items-center justify-between shrink-0">
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              <span className="font-medium text-sm">Sarah &mdash; VITAL Specialist</span>
-            </div>
-            <button
-              onClick={() => setShowPopup(false)}
-              className="text-white/80 hover:text-white"
-              aria-label="Close"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {!scriptReady ? (
-            <div className="flex-1 flex items-center justify-center text-gray-400 text-sm">
-              Connecting to Sarah...
-            </div>
-          ) : (
-            <div ref={widgetContainerRef} className="flex-1 overflow-hidden" />
-          )}
-        </div>
-      )}
     </>
   );
 }
