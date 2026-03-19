@@ -1,31 +1,58 @@
 import { NextResponse } from "next/server";
 
-const AGENT_ID =
-  process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || "agent_0001kkf2z3t2e2svnjvqjzf95tc3";
-const API_KEY = process.env.ELEVENLABS_API_KEY;
-
 export async function GET() {
-  if (!API_KEY) {
+  const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
+  const apiKey = process.env.ELEVENLABS_API_KEY;
+
+  if (!apiKey) {
+    console.error("[elevenlabs-signed-url] ELEVENLABS_API_KEY env var is missing");
     return NextResponse.json(
       { error: "ElevenLabs API key not configured" },
       { status: 500 }
     );
   }
 
-  const res = await fetch(
-    `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${AGENT_ID}`,
-    {
-      headers: { "xi-api-key": API_KEY },
-    }
-  );
-
-  if (!res.ok) {
+  if (!agentId) {
+    console.error("[elevenlabs-signed-url] NEXT_PUBLIC_ELEVENLABS_AGENT_ID env var is missing");
     return NextResponse.json(
-      { error: "Failed to get signed URL" },
-      { status: res.status }
+      { error: "ElevenLabs agent ID not configured" },
+      { status: 500 }
     );
   }
 
-  const data = await res.json();
-  return NextResponse.json({ signed_url: data.signed_url });
+  const url = `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${agentId}`;
+
+  try {
+    const res = await fetch(url, {
+      headers: { "xi-api-key": apiKey },
+      signal: AbortSignal.timeout(8000),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error("[elevenlabs-signed-url] API error:", res.status, JSON.stringify(data));
+      return NextResponse.json(
+        { error: "Failed to get signed URL", detail: data },
+        { status: res.status }
+      );
+    }
+
+    if (!data.signed_url) {
+      console.error("[elevenlabs-signed-url] No signed_url in response:", JSON.stringify(data));
+      return NextResponse.json(
+        { error: "No signed URL in response", detail: data },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json({ signed_url: data.signed_url });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error("[elevenlabs-signed-url] Fetch failed:", message);
+    return NextResponse.json(
+      { error: "Could not reach ElevenLabs API", detail: message },
+      { status: 502 }
+    );
+  }
 }
