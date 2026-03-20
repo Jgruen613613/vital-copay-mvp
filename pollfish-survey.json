@@ -1,0 +1,203 @@
+{
+  "survey_name": "VITAL Health — Copay Assistance Patient Survey",
+  "description": "Understanding patient experiences with specialty medication costs and copay assistance program awareness. Use this file as a reference when building the survey in the Pollfish dashboard at pollfish.com.",
+  "estimated_completion_time": "3-4 minutes",
+  "target_audience": "US adults 18+ currently taking or recently prescribed specialty medications",
+  "questions": [
+    {
+      "order": 1,
+      "type": "description",
+      "text": "Thank you for participating in this brief survey about specialty medication costs. Your responses will help us improve access to copay assistance programs. All answers are anonymous.",
+      "notes": "Use Pollfish 'Description' question type — no response required."
+    },
+    {
+      "order": 2,
+      "type": "single_choice",
+      "text": "Are you currently taking or have you been prescribed a specialty medication in the past 12 months?",
+      "answers": [
+        "Yes, I am currently taking a specialty medication",
+        "Yes, I was prescribed one in the past 12 months but am no longer taking it",
+        "No, but a family member is",
+        "No"
+      ],
+      "skip_logic": "If 'No', skip to question 14 (demographics only)"
+    },
+    {
+      "order": 3,
+      "type": "single_choice",
+      "text": "What type of condition does your specialty medication treat?",
+      "answers": [
+        "Autoimmune / Rheumatology (e.g., rheumatoid arthritis, psoriasis, Crohn's disease)",
+        "Oncology / Cancer",
+        "Multiple Sclerosis",
+        "Rare / Orphan Disease",
+        "Diabetes (injectable)",
+        "HIV / Hepatitis",
+        "Other"
+      ],
+      "shuffle_answers": false
+    },
+    {
+      "order": 4,
+      "type": "single_choice",
+      "text": "What type of health insurance do you currently have?",
+      "answers": [
+        "Commercial / Employer-sponsored",
+        "Medicare",
+        "Medicaid",
+        "Both Medicare and Medicaid (Dual Eligible)",
+        "Uninsured / Self-pay",
+        "Other / Not sure"
+      ]
+    },
+    {
+      "order": 5,
+      "type": "single_choice",
+      "text": "How much do you currently pay out-of-pocket per month for your specialty medication?",
+      "answers": [
+        "$0 (fully covered)",
+        "$1 – $50",
+        "$51 – $200",
+        "$201 – $500",
+        "$501 – $1,000",
+        "More than $1,000",
+        "I don't know / I haven't filled it yet"
+      ]
+    },
+    {
+      "order": 6,
+      "type": "single_choice",
+      "text": "Have you ever skipped doses, delayed filling a prescription, or stopped taking a specialty medication because of cost?",
+      "answers": [
+        "Yes, frequently",
+        "Yes, occasionally",
+        "No, but I've considered it",
+        "No, never"
+      ]
+    },
+    {
+      "order": 7,
+      "type": "single_choice",
+      "text": "Before this survey, were you aware that copay assistance programs exist for specialty medications?",
+      "answers": [
+        "Yes, I currently use one",
+        "Yes, I've heard of them but don't use one",
+        "No, this is the first I'm hearing about it",
+        "I'm not sure what that means"
+      ]
+    },
+    {
+      "order": 8,
+      "type": "multiple_choice",
+      "text": "What has prevented you from using a copay assistance program? (Select all that apply)",
+      "answers": [
+        "I didn't know they existed",
+        "I didn't think I would qualify",
+        "The application process seemed too complicated",
+        "My doctor or pharmacy never mentioned it",
+        "I couldn't find the right program for my medication",
+        "I applied but was denied or waitlisted",
+        "I already use one",
+        "None of the above"
+      ],
+      "max_selections": null
+    },
+    {
+      "order": 9,
+      "type": "single_choice",
+      "text": "How helpful would it be to have a specialist handle the entire copay assistance enrollment process for you?",
+      "answers": [
+        "Extremely helpful",
+        "Very helpful",
+        "Somewhat helpful",
+        "Not very helpful",
+        "Not helpful at all"
+      ]
+    },
+    {
+      "order": 10,
+      "type": "single_choice",
+      "text": "If a free service could reduce your monthly medication cost by 80% or more, how likely would you be to use it?",
+      "answers": [
+        "Definitely would use it",
+        "Probably would use it",
+        "Might or might not",
+        "Probably would not",
+        "Definitely would not"
+      ]
+    },
+    {
+      "order": 11,
+      "type": "multiple_choice",
+      "text": "How would you prefer to get help with copay assistance enrollment? (Select all that apply)",
+      "answers": [
+        "Speak with a specialist on the phone",
+        "Chat online with a specialist",
+        "Use an online tool to find programs myself",
+        "Have my doctor's office handle it",
+        "Have my pharmacy handle it",
+        "Use a mobile app"
+      ]
+    },
+    {
+      "order": 12,
+      "type": "single_choice",
+      "text": "How important is it that a copay assistance service does NOT require you to share your full medical history?",
+      "answers": [
+        "Extremely important",
+        "Very important",
+        "Somewhat important",
+        "Not very important",
+        "Not important at all"
+      ]
+    },
+    {
+      "order": 13,
+      "type": "ranking",
+      "text": "Rank the following factors by importance when choosing a copay assistance service (most important first):",
+      "answers": [
+        "Amount of savings",
+        "Privacy and data security",
+        "Ease of enrollment",
+        "Speed of getting help",
+        "Having a real person to talk to"
+      ]
+    },
+    {
+      "order": 14,
+      "type": "single_choice",
+      "text": "What is your age range?",
+      "answers": [
+        "18–24",
+        "25–34",
+        "35–44",
+        "45–54",
+        "55–64",
+        "65+"
+      ]
+    },
+    {
+      "order": 15,
+      "type": "single_choice",
+      "text": "What is your household income?",
+      "answers": [
+        "Under $25,000",
+        "$25,000 – $49,999",
+        "$50,000 – $74,999",
+        "$75,000 – $99,999",
+        "$100,000 – $149,999",
+        "$150,000+",
+        "Prefer not to say"
+      ]
+    }
+  ],
+  "pollfish_setup_instructions": {
+    "step_1": "Log in to your Pollfish account at pollfish.com",
+    "step_2": "Click 'Create Survey' and name it 'VITAL Health — Copay Assistance Patient Survey'",
+    "step_3": "Add each question using the question types specified in this file (single_choice, multiple_choice, ranking, description)",
+    "step_4": "Configure skip logic on question 2: if respondent selects 'No', skip to question 14",
+    "step_5": "Set targeting: US adults 18+, optionally filter by health condition interest",
+    "step_6": "For WebPlugin integration: copy your API key from Dashboard > Apps and paste it into your .env.local as NEXT_PUBLIC_POLLFISH_API_KEY",
+    "step_7": "Set debug: true during development, then switch to false for production"
+  }
+}
