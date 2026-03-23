@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZOE — The First Fragrance Made Entirely for You</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --stone-950: #0c0a09;
+    --stone-900: #1c1917;
+    --stone-800: #292524;
+    --stone-700: #44403c;
+    --stone-600: #57534e;
+    --stone-500: #78716c;
+    --stone-400: #a8a29e;
+    --amber-50: #fffbeb;
+    --amber-100: #fef3c7;
+    --amber-200: #fde68a;
+    --amber-900-10: rgba(120, 53, 15, 0.1);
+    --amber-200-60: rgba(253, 230, 138, 0.6);
+    --amber-200-40: rgba(253, 230, 138, 0.4);
+    --amber-200-20: rgba(253, 230, 138, 0.2);
+    --amber-200-5: rgba(253, 230, 138, 0.05);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--stone-950);
+    color: var(--stone-400);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(12, 10, 9, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--stone-800);
+  }
+  .nav-inner {
+    max-width: 72rem; margin: 0 auto; padding: 0 1.5rem;
+    display: flex; align-items: center; justify-content: space-between; height: 4rem;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 0.15em; color: var(--amber-100); text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a { color: var(--stone-400); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--amber-100); }
+  .nav-cta {
+    padding: 0.5rem 1.25rem; background: var(--amber-100); color: var(--stone-950);
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--amber-200); }
+  .nav-mobile { display: none; background: none; border: none; color: var(--stone-400); cursor: pointer; }
+
+  /* ---- HERO ---- */
+  .hero {
+    position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, var(--stone-950), var(--stone-900), var(--stone-950));
+  }
+  .hero-glow {
+    position: absolute; top: 25%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px; background: var(--amber-900-10);
+    border-radius: 50%; filter: blur(80px);
+  }
+  .hero-content { position: relative; z-index: 10; max-width: 48rem; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+  .hero-tag { color: var(--amber-200-60); font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 2rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 4.5rem); color: var(--amber-50); line-height: 1.15; margin-bottom: 1.5rem; }
+  .hero h1 span { color: var(--amber-200); }
+  .hero-sub { color: var(--stone-400); font-size: clamp(1rem, 2.5vw, 1.25rem); max-width: 32rem; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .hero-cta {
+    display: inline-block; padding: 1rem 2rem; background: var(--amber-100); color: var(--stone-950);
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .hero-cta:hover { background: var(--amber-200); box-shadow: 0 0 30px var(--amber-200-20); }
+  .hero-stats { margin-top: 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 20rem; margin-left: auto; margin-right: auto; }
+  .hero-stat-num { font-family: 'Playfair Display', serif; color: var(--amber-100); font-size: 1.5rem; }
+  .hero-stat-label { color: var(--stone-500); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.25rem; }
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ---- HOW IT WORKS ---- */
+  .how { padding: 6rem 1.5rem; max-width: 64rem; margin: 0 auto; }
+  .section-tag { color: var(--amber-200-60); font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; text-align: center; margin-bottom: 1rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--amber-50); text-align: center; margin-bottom: 4rem; }
+  .steps { display: flex; flex-direction: column; gap: 3rem; }
+  .step { display: flex; gap: 1.5rem; align-items: flex-start; }
+  .step-num {
+    flex-shrink: 0; width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--stone-700); font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    color: var(--amber-200-60); transition: border-color 0.3s;
+  }
+  .step:hover .step-num { border-color: var(--amber-200-40); }
+  .step h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--amber-50); margin-bottom: 0.5rem; }
+  .step p { color: var(--stone-400); line-height: 1.7; margin-bottom: 0.25rem; }
+  .step .detail { color: var(--amber-200-40); font-size: 0.875rem; font-style: italic; }
+
+  /* ---- EXPERIENCE ---- */
+  .experience { padding: 6rem 1.5rem; background: var(--stone-900); }
+  .experience-inner { max-width: 64rem; margin: 0 auto; }
+  .experience-sub { color: var(--stone-400); text-align: center; max-width: 32rem; margin: -2rem auto 4rem; }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .feature {
+    padding: 2rem; border: 1px solid var(--stone-800); transition: border-color 0.3s;
+  }
+  .feature:hover { border-color: var(--amber-200-20); }
+  .feature-icon { color: var(--amber-200-40); margin-bottom: 1rem; transition: color 0.3s; }
+  .feature:hover .feature-icon { color: var(--amber-200-60); }
+  .feature h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--amber-50); margin-bottom: 0.25rem; }
+  .feature .sub { color: var(--amber-200-40); font-size: 0.8rem; margin-bottom: 0.75rem; }
+  .feature p { font-size: 0.875rem; line-height: 1.7; }
+
+  /* ---- QUIZ PREVIEW ---- */
+  .quiz-preview { padding: 6rem 1.5rem; }
+  .quiz-inner { max-width: 32rem; margin: 0 auto; }
+  .quiz-card {
+    border: 1px solid var(--stone-800); padding: 2.5rem; position: relative; overflow: hidden;
+  }
+  .quiz-progress { height: 2px; background: var(--stone-800); margin-bottom: 2rem; }
+  .quiz-progress-fill { height: 100%; width: 35%; background: var(--amber-200-60); }
+  .quiz-block { color: var(--amber-200-40); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .quiz-qnum { color: var(--stone-600); font-size: 0.75rem; margin-bottom: 2rem; }
+  .quiz-question { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--amber-50); line-height: 1.4; margin-bottom: 2rem; }
+  .quiz-textarea {
+    width: 100%; padding: 0.75rem 1rem; background: var(--stone-900); border: 1px solid var(--stone-700);
+    color: var(--amber-50); font-family: 'Inter', sans-serif; font-size: 0.9rem; resize: none;
+    outline: none; transition: border-color 0.2s; min-height: 100px;
+  }
+  .quiz-textarea::placeholder { color: var(--stone-600); }
+  .quiz-textarea:focus { border-color: var(--amber-200-40); }
+  .quiz-btn {
+    margin-top: 1.5rem; width: 100%; padding: 0.75rem; background: var(--amber-100); color: var(--stone-950);
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;
+    border: none; cursor: pointer; transition: background 0.2s;
+  }
+  .quiz-btn:hover { background: var(--amber-200); }
+  .quiz-note { text-align: center; color: var(--stone-600); font-size: 0.75rem; margin-top: 1.5rem; }
+
+  /* ---- WAITLIST ---- */
+  .waitlist { padding: 6rem 1.5rem; background: var(--stone-900); }
+  .waitlist-inner { max-width: 32rem; margin: 0 auto; text-align: center; }
+  .waitlist-desc { margin: -2rem auto 2rem; max-width: 28rem; line-height: 1.7; }
+  .waitlist-form { display: flex; gap: 0.75rem; }
+  .waitlist-input {
+    flex: 1; padding: 0.75rem 1rem; background: var(--stone-950); border: 1px solid var(--stone-700);
+    color: var(--amber-50); font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  .waitlist-input::placeholder { color: var(--stone-600); }
+  .waitlist-input:focus { border-color: var(--amber-200-40); }
+  .waitlist-btn {
+    padding: 0.75rem 1.5rem; background: var(--amber-100); color: var(--stone-950);
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.75rem;
+    border: none; cursor: pointer; white-space: nowrap; transition: background 0.2s;
+  }
+  .waitlist-btn:hover { background: var(--amber-200); }
+  .waitlist-success {
+    padding: 1.5rem; border: 1px solid var(--amber-200-20); display: none;
+  }
+  .waitlist-success h3 { font-family: 'Playfair Display', serif; color: var(--amber-100); font-size: 1.1rem; }
+  .waitlist-success p { color: var(--stone-500); font-size: 0.8rem; margin-top: 0.5rem; }
+
+  /* ---- ABOUT ---- */
+  .about { padding: 6rem 1.5rem; }
+  .about-inner { max-width: 42rem; margin: 0 auto; text-align: center; }
+  .about-inner p { margin-bottom: 1.5rem; line-height: 1.8; }
+  .about-quote { color: var(--amber-200-60); font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; }
+
+  /* ---- FOOTER ---- */
+  footer { padding: 3rem 1.5rem; border-top: 1px solid var(--stone-800); }
+  .footer-inner {
+    max-width: 64rem; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;
+  }
+  .footer-brand span { font-family: 'Playfair Display', serif; font-size: 1.25rem; letter-spacing: 0.15em; color: var(--amber-100); }
+  .footer-brand p { color: var(--stone-600); font-size: 0.7rem; margin-top: 0.25rem; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { color: var(--stone-500); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--amber-100); }
+  .footer-copy { width: 100%; text-align: center; padding-top: 1.5rem; border-top: 1px solid var(--stone-900); color: var(--stone-700); font-size: 0.7rem; }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-mobile { display: block; }
+    .step { flex-direction: column; }
+    .waitlist-form { flex-direction: column; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ZOE</a>
+    <div class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#experience">The Experience</a>
+      <a href="#about">About</a>
+      <a href="#quiz-preview" class="nav-cta">Discover Your Scent</a>
+    </div>
+    <button class="nav-mobile" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <p class="hero-tag">The First Fragrance Made Entirely for You</p>
+    <h1 class="serif">Your scent.<br><span>Your story.</span></h1>
+    <p class="hero-sub">Built from your memories, your music, your aesthetic identity — and getting more precise with every wear.</p>
+    <a href="#quiz-preview" class="hero-cta">Discover Your Scent</a>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">28</div><div class="hero-stat-label">Questions</div></div>
+      <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Sample Vials</div></div>
+      <div><div class="hero-stat-num">1</div><div class="hero-stat-label">Perfect Match</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#57534e"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="how">
+  <p class="section-tag">The Process</p>
+  <h2 class="section-title serif">How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <h3>Tell Us Who You Are</h3>
+        <p>Our 28-question quiz maps your scent memories, music taste, aesthetic identity, and the emotional territory your fragrance should inhabit.</p>
+        <p class="detail">Not what you think you want — who you actually are.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <h3>AI Generates Your Brief</h3>
+        <p>Your answers are translated into a precise perfumer's creative brief — olfactive family, specific notes, reference fragrances, and the emotional core.</p>
+        <p class="detail">The bridge between your story and chemistry.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <h3>A Real Perfumer Creates It</h3>
+        <p>An experienced indie perfumer interprets your brief and creates a genuine EDP at 15–18% concentration. Real fragrance, not a compromise.</p>
+        <p class="detail">Three sample vials shipped to you. Wear each one for a week.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div>
+        <h3>We Refine Until It's You</h3>
+        <p>Rate your samples, tell us what works and what doesn't. With each iteration, your fragrance gets closer to something only you could wear.</p>
+        <p class="detail">The feedback loop is the entire product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience">
+  <div class="experience-inner">
+    <p class="section-tag">Beyond Fragrance</p>
+    <h2 class="section-title serif">The Experience</h2>
+    <p class="experience-sub">Zoe is not a fragrance brand. It is an olfactive identity platform — the first place where scent becomes social, personal, and alive.</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3>The Scent Canvas</h3>
+        <p class="sub">Your olfactive mood board</p>
+        <p>Curate images, music, memories, and colors that define your aesthetic identity. The canvas becomes the creative brief — and something beautiful enough to share.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        </div>
+        <h3>The Memory Journal</h3>
+        <p class="sub">Scent as autobiography</p>
+        <p>Each quarterly fragrance comes with a sensory prompt. Write down what the scent unlocks. Over years, build an olfactive autobiography — chapters of your life mapped to fragrance.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3>Share Your Scent</h3>
+        <p class="sub">The olfactive social graph</p>
+        <p>Discover people whose scent identity aligns with yours. Follow influencers' olfactive canvases. Share your fragrance story. The first social network for how you smell.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>Memory Capture</h3>
+        <p class="sub">Bottling a moment in time</p>
+        <p>Preserve the scent of a chapter of your life — a summer, a relationship, a home. Fifteen years from now, open the bottle and be there again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ PREVIEW -->
+<section id="quiz-preview" class="quiz-preview">
+  <p class="section-tag">Try It Now</p>
+  <h2 class="section-title serif">A Taste of the Quiz</h2>
+  <div class="quiz-inner">
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-progress"><div class="quiz-progress-fill" id="quizProgress"></div></div>
+      <div class="quiz-block" id="quizBlock">Scent Memories</div>
+      <div class="quiz-qnum" id="quizQnum">Question 1 of 5</div>
+      <div class="quiz-question" id="quizQuestion">Describe a smell from your childhood that you loved. What was happening around you?</div>
+      <textarea class="quiz-textarea" id="quizAnswer" placeholder="e.g., My grandmother's kitchen when she was baking bread on Sunday mornings..."></textarea>
+      <button class="quiz-btn" id="quizBtn" onclick="nextQuestion()">Continue</button>
+      <p class="quiz-note">This is a preview — the full quiz has 28 questions across 5 blocks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="waitlist">
+  <div class="waitlist-inner">
+    <p class="section-tag">Coming Soon</p>
+    <h2 class="section-title serif">The Quarterly Subscription</h2>
+    <p class="waitlist-desc">Every quarter, a new 10ml fragrance that evolves with your life. Each one more accurate than the last. Join the waitlist for early access.</p>
+    <form class="waitlist-form" id="waitlistForm" onsubmit="submitWaitlist(event)">
+      <input type="email" class="waitlist-input" placeholder="your@email.com" required>
+      <button type="submit" class="waitlist-btn">Join Waitlist</button>
+    </form>
+    <div class="waitlist-success" id="waitlistSuccess">
+      <h3 class="serif">You're on the list.</h3>
+      <p>We'll be in touch when subscriptions open.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-inner">
+    <p class="section-tag">About Zoe</p>
+    <h2 class="section-title serif">The Name Means Life</h2>
+    <p>Zoe was born from a simple observation: scent is the most emotionally powerful sense we have — the only one with a direct neural pathway to memory and emotion — and yet no one has built a platform that treats it with the depth it deserves.</p>
+    <p>We believe your fragrance should be as unique as your fingerprint. Not chosen from a shelf. Not recommended by an algorithm that knows nothing about the smell of your grandmother's kitchen or the sound of rain on a cabin roof that makes you feel at home.</p>
+    <p>Every Zoe fragrance is a genuine Eau de Parfum — 15–18% concentration, crafted by an experienced perfumer, from a creative brief generated by the most detailed preference mapping ever applied to scent. It is real perfumery. It just starts with you instead of a boardroom.</p>
+    <p class="about-quote">Your scent. Your story. Getting more precise with every wear.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="serif">ZOE</span>
+      <p>The first fragrance made entirely for you.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#quiz-preview">Take the Quiz</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Zoe Fragrance. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Mini quiz preview
+  const questions = [
+    { block: 'Scent Memories', q: 'Describe a smell from your childhood that you loved. What was happening around you?', ph: "e.g., My grandmother's kitchen when she was baking bread on Sunday mornings..." },
+    { block: 'Scent Memories', q: 'Is there a place — a specific room, outdoor space, or city — whose smell you could live inside?', ph: 'e.g., A pine forest after rain, an old bookshop in Paris...' },
+    { block: 'Fragrance Preferences', q: 'Name up to three fragrances you currently own or have owned and loved.', ph: 'e.g., Chanel No. 5, Le Labo Santal 33, Maison Margiela By the Fireplace...' },
+    { block: 'Aesthetic World', q: 'Describe an image that captures the visual world you want your fragrance to inhabit.', ph: 'e.g., A misty Japanese garden at dawn, stone pathways, bamboo...' },
+    { block: 'Practical Details', q: 'In one sentence: what should this fragrance make you feel?', ph: "e.g., Like I'm the most interesting person in the room and I know it." },
+  ];
+  let qi = 0;
+
+  function nextQuestion() {
+    qi++;
+    if (qi >= questions.length) {
+      document.getElementById('quizCard').innerHTML = `
+        <div style="text-align:center;padding:2rem 0;">
+          <h3 class="serif" style="color:var(--amber-50);font-size:1.5rem;margin-bottom:1rem;">Beautiful.</h3>
+          <p style="color:var(--stone-400);margin-bottom:0.5rem;">In the full quiz, your 28 answers would now generate a precise perfumer's creative brief — naming specific aroma chemicals, olfactive families, and the emotional core of your fragrance.</p>
+          <p style="color:var(--amber-200-40);font-size:0.85rem;font-style:italic;margin-top:1.5rem;">The full experience is coming soon.</p>
+        </div>
+      `;
+      return;
+    }
+    const q = questions[qi];
+    document.getElementById('quizBlock').textContent = q.block;
+    document.getElementById('quizQnum').textContent = `Question ${qi + 1} of ${questions.length}`;
+    document.getElementById('quizQuestion').textContent = q.q;
+    document.getElementById('quizAnswer').value = '';
+    document.getElementById('quizAnswer').placeholder = q.ph;
+    document.getElementById('quizProgress').style.width = `${((qi + 1) / questions.length) * 100}%`;
+    if (qi === questions.length - 1) document.getElementById('quizBtn').textContent = 'Finish';
+  }
+
+  function submitWaitlist(e) {
+    e.preventDefault();
+    document.getElementById('waitlistForm').style.display = 'none';
+    document.getElementById('waitlistSuccess').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
