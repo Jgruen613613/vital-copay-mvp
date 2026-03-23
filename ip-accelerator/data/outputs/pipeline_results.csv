@@ -1,0 +1,21 @@
+id,source,title,institution,date,composite_score,acceleration_domain,acceleration_multiplier,adjusted_composite_score,confidence_level,top_match_company,top_match_score
+USPTO-11234567,uspto,Machine Learning System for Protein Structure Prediction Using Graph Neural Networks,Massachusetts Institute of Technology,2024-06-15,7.29,protein_engineering,10.8,78.73,high,Google,48.0
+NIH-R01GM180002,nih,Computational Design of Metalloenzymes for Carbon Dioxide Reduction,University of California Berkeley,2024-07-01,5.9,protein_engineering,9.732,57.42,high,Google,30.0
+USPTO-11789012,uspto,Self-Healing Polymer Composite for Structural Applications,Georgia Institute of Technology,2024-09-27,7.56,materials_science,6.48,48.99,high,3M,53.0
+USPTO-12234567,uspto,Hypersonic Vehicle Thermal Protection System Using Functionally Graded Materials,Georgia Institute of Technology,2024-06-30,7.54,materials_science,6.48,48.86,high,3M,53.0
+USPTO-11890123,uspto,Solid-State Lithium Battery with AI-Designed Electrolyte,Stanford University,2024-02-14,7.26,materials_science,5.477,39.76,high,3M,45.0
+USPTO-11567890,uspto,CRISPR-Based Diagnostic Platform for Rapid Pathogen Detection,Johns Hopkins University,2024-01-18,7.73,medical_diagnostics,4.979,38.49,high,Roche,50.0
+ARXIV-2024.12345,arxiv,Diffusion Models for De Novo Drug Design with Multi-Objective Optimization,Stanford University,2024-11-15,6.12,drug_discovery,6.224,38.09,high,IBM,35.0
+USPTO-12345678,uspto,Next-Generation mRNA Delivery System Using pH-Responsive Lipid Nanoparticles,Columbia University,2024-10-15,8.02,protein_engineering,4.626,37.1,high,Qualcomm,54.0
+ARXIV-2024.23456,arxiv,Foundation Model for Autonomous Robot Manipulation in Unstructured Environments,Carnegie Mellon University,2024-10-08,5.99,autonomous_systems,5.348,32.03,high,IBM,35.0
+USPTO-11901234,uspto,Privacy-Preserving Federated Learning Framework for Medical Imaging,Carnegie Mellon University,2024-07-22,7.51,medical_diagnostics,3.792,28.48,high,Roche,61.0
+USPTO-11345678,uspto,Autonomous Catalyst Discovery Platform Using Bayesian Optimization,Stanford University,2024-03-22,7.66,climate_energy,3.0,22.98,high,Siemens,53.0
+ARXIV-2024.34567,arxiv,Large Language Models for Automated Vulnerability Discovery in Source Code,Massachusetts Institute of Technology,2024-12-01,6.0,cybersecurity,2.814,16.89,high,IBM,27.91
+USPTO-12123456,uspto,GaN Power Semiconductor with AI-Optimized Device Architecture,Massachusetts Institute of Technology,2024-11-08,7.71,semiconductor,1.773,13.67,high,TSMC,56.0
+USPTO-11678901,uspto,Neuromorphic Computing Architecture for Edge AI Applications,University of Michigan,2024-05-03,7.3,semiconductor,1.773,12.94,high,TSMC,40.4
+USPTO-11456789,uspto,Quantum Error Correction Code for Topological Qubit Arrays,California Institute of Technology,2024-08-10,7.57,quantum_computing,1.53,11.58,high,Intel,45.0
+NIH-R01HL190004,nih,Wearable Biosensor Array for Continuous Cardiac Biomarker Monitoring,University of Michigan,2024-03-01,5.7,telecom,1.98,11.29,high,Roche,20.49
+USPTO-12012345,uspto,Biodegradable Microelectronics for Precision Agriculture Soil Monitoring,University of Wisconsin,2024-04-30,6.96,agriculture,1.593,11.09,high,Apple,18.44
+ARXIV-2024.45678,arxiv,Scalable Quantum Machine Learning for Financial Portfolio Optimization,Columbia University,2024-08-20,6.15,quantum_computing,1.332,8.19,high,Intel,27.06
+NIH-R01AI170001,nih,AI-Guided mRNA Vaccine Design for Emerging Infectious Diseases,Columbia University,2024-04-01,6.42,ai_ml,0.644,4.13,high,Microsoft,33.86
+NIH-U01CA210003,nih,AI-Powered Multimodal Cancer Early Detection Platform,Johns Hopkins University,2024-09-01,5.8,ai_ml,0.644,3.73,high,Microsoft,28.41

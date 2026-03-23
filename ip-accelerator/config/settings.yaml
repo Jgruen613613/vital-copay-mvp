@@ -1,0 +1,32 @@
+target_universities:
+  - Massachusetts Institute of Technology
+  - Stanford University
+  - California Institute of Technology
+  - Johns Hopkins University
+  - University of Michigan
+  - Georgia Institute of Technology
+  - University of California Berkeley
+  - University of Wisconsin
+  - Columbia University
+  - Carnegie Mellon University
+
+scoring_weights:
+  technical_novelty: 0.15
+  defensibility: 0.10
+  market_size: 0.15
+  trl: 0.10
+  competitive_landscape: 0.10
+  citation_momentum: 0.10
+  inventor_quality: 0.05
+  fto_risk: 0.10
+  patent_life: 0.05
+  licensing_complexity: 0.10
+
+discovery:
+  max_patents_per_university: 200
+  date_range_years: 2
+  arxiv_max_results: 100
+
+pipeline:
+  cache_ttl_hours: 24
+  rate_limit_per_second: 0.33
