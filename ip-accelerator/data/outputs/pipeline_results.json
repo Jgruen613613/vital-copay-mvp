@@ -1,0 +1,1584 @@
+[
+  {
+    "id": "USPTO-11234567",
+    "source": "uspto",
+    "title": "Machine Learning System for Protein Structure Prediction Using Graph Neural Networks",
+    "abstract": "A computational method and system for predicting three-dimensional protein structures using graph neural networks. The method processes amino acid sequences through a multi-layer graph attention network to predict inter-residue distances and torsion angles, enabling rapid protein folding prediction without molecular dynamics simulation. The system demonstrates accuracy comparable to experimental methods while reducing computational time from days to minutes.",
+    "institution": "Massachusetts Institute of Technology",
+    "authors": [
+      "Sarah Chen",
+      "David Park",
+      "Michael Rodriguez"
+    ],
+    "date": "2024-06-15",
+    "domain_tags": [
+      "protein_engineering",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "patent_number": "11234567",
+      "num_claims": 24,
+      "forward_citations": 15,
+      "cpc_codes": [
+        "G16B15/30",
+        "G06N3/08",
+        "C12N15/10"
+      ],
+      "assignees": [
+        "Massachusetts Institute of Technology"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 8.35,
+      "market_size": 6.28,
+      "trl": 3.25,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 8.39,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.29,
+    "confidence_level": "high",
+    "acceleration_domain": "protein_engineering",
+    "acceleration_multiplier": 10.8,
+    "adjusted_composite_score": 78.73,
+    "acceleration_rationale": "Domain: Protein Engineering. AI compression factor: 9.0x. Current AI maturity: 80%. Acceleration trend: 1.5x. IP relevance to AI-acceleratable R&D: 100%. Multiplier: 10.80x. Precedents: ESMFold \u2014 fast protein structure prediction.",
+    "relevance_score": 1.0,
+    "corporate_matches": [
+      {
+        "company": "Google",
+        "match_score": 48.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 3, 10.8x acceleration)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Nvidia",
+        "match_score": 43.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 3, 10.8x acceleration)",
+        "r_and_d_budget_billions": 7.3
+      },
+      {
+        "company": "TSMC",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 3, 10.8x acceleration)",
+        "r_and_d_budget_billions": 5.5
+      },
+      {
+        "company": "Siemens",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 3, 10.8x acceleration)",
+        "r_and_d_budget_billions": 6.2
+      },
+      {
+        "company": "General Electric",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 3, 10.8x acceleration)",
+        "r_and_d_budget_billions": 3.4
+      }
+    ]
+  },
+  {
+    "id": "NIH-R01GM180002",
+    "source": "nih",
+    "title": "Computational Design of Metalloenzymes for Carbon Dioxide Reduction",
+    "abstract": "This research program combines computational protein design with directed evolution to engineer novel metalloenzymes capable of efficient carbon dioxide reduction to value-added chemicals. Using machine learning-guided protein engineering, we aim to create biocatalysts that operate at ambient conditions with selectivity exceeding 95% for C2+ products. The project integrates quantum mechanical modeling of active sites with generative protein design algorithms.",
+    "institution": "University of California Berkeley",
+    "authors": [
+      "Nathan Williams",
+      "Sophia Rivera",
+      "George Taylor"
+    ],
+    "date": "2024-07-01",
+    "domain_tags": [
+      "protein_engineering",
+      "climate_energy",
+      "synthetic_biology"
+    ],
+    "raw_metadata": {
+      "project_num": "R01GM180002",
+      "activity_code": "R01",
+      "award_amount": 1800000,
+      "project_start_date": "2024-07-01",
+      "project_end_date": "2028-06-30",
+      "spending_categories": null,
+      "organization": "University of California Berkeley"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.61,
+      "defensibility": 7.5,
+      "market_size": 5.96,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 6.0
+    },
+    "composite_score": 5.9,
+    "confidence_level": "high",
+    "acceleration_domain": "protein_engineering",
+    "acceleration_multiplier": 9.732,
+    "adjusted_composite_score": 57.42,
+    "acceleration_rationale": "Domain: Protein Engineering. AI compression factor: 9.0x. Current AI maturity: 80%. Acceleration trend: 1.5x. IP relevance to AI-acceleratable R&D: 89%. Multiplier: 9.73x. Precedents: ESMFold \u2014 fast protein structure prediction.",
+    "relevance_score": 0.891,
+    "corporate_matches": [
+      {
+        "company": "Google",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 9.7x acceleration)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Amazon",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 9.7x acceleration)",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Pfizer",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 9.7x acceleration)",
+        "r_and_d_budget_billions": 11.4
+      },
+      {
+        "company": "Merck",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 9.7x acceleration)",
+        "r_and_d_budget_billions": 13.5
+      },
+      {
+        "company": "Tesla",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 9.7x acceleration)",
+        "r_and_d_budget_billions": 3.1
+      }
+    ]
+  },
+  {
+    "id": "USPTO-11789012",
+    "source": "uspto",
+    "title": "Self-Healing Polymer Composite for Structural Applications",
+    "abstract": "A self-healing polymer composite material incorporating microencapsulated healing agents and shape memory alloy fibers for autonomous damage repair in structural applications. The material demonstrates 95% recovery of mechanical properties after impact damage through a dual healing mechanism combining chemical bonding and physical realignment. Validated for aerospace and automotive structural components with service temperatures up to 150\u00b0C.",
+    "institution": "Georgia Institute of Technology",
+    "authors": [
+      "Alexandra Foster",
+      "Raj Gupta"
+    ],
+    "date": "2024-09-27",
+    "domain_tags": [
+      "materials_science",
+      "aerospace"
+    ],
+    "raw_metadata": {
+      "patent_number": "11789012",
+      "num_claims": 20,
+      "forward_citations": 6,
+      "cpc_codes": [
+        "C08L63/00",
+        "B29C73/00",
+        "B64C1/00"
+      ],
+      "assignees": [
+        "Georgia Institute of Technology"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 7.75,
+      "market_size": 5.69,
+      "trl": 5.5,
+      "competitive_landscape": 9.0,
+      "citation_momentum": 6.28,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.56,
+    "confidence_level": "high",
+    "acceleration_domain": "materials_science",
+    "acceleration_multiplier": 6.48,
+    "adjusted_composite_score": 48.99,
+    "acceleration_rationale": "Domain: Materials Science. AI compression factor: 6.0x. Current AI maturity: 60%. Acceleration trend: 1.8x. IP relevance to AI-acceleratable R&D: 100%. Multiplier: 6.48x. Precedents: GNoME (Google DeepMind) \u2014 2.2M new materials predicted.",
+    "relevance_score": 1.0,
+    "corporate_matches": [
+      {
+        "company": "3M",
+        "match_score": 53.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); Direct market relevance (materials science); High strategic value (TRL 6, 6.5x acceleration)",
+        "r_and_d_budget_billions": 1.9
+      },
+      {
+        "company": "Apple",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 6, 6.5x acceleration)",
+        "r_and_d_budget_billions": 29.9
+      },
+      {
+        "company": "Meta",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 6, 6.5x acceleration)",
+        "r_and_d_budget_billions": 35.3
+      },
+      {
+        "company": "IBM",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 6, 6.5x acceleration)",
+        "r_and_d_budget_billions": 6.6
+      },
+      {
+        "company": "Samsung",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 6, 6.5x acceleration)",
+        "r_and_d_budget_billions": 22.4
+      }
+    ]
+  },
+  {
+    "id": "USPTO-12234567",
+    "source": "uspto",
+    "title": "Hypersonic Vehicle Thermal Protection System Using Functionally Graded Materials",
+    "abstract": "A thermal protection system for hypersonic vehicles utilizing functionally graded ceramic-metal composites manufactured through directed energy deposition additive manufacturing. The system provides continuous thermal resistance from 2000\u00b0C surface temperatures to structural aluminum interfaces, eliminating traditional tile-based TPS failure modes. Computational fluid dynamics and finite element analysis validated performance at Mach 7+ conditions.",
+    "institution": "Georgia Institute of Technology",
+    "authors": [
+      "Mark Anderson",
+      "Yuki Nakamura",
+      "Rebecca Stone"
+    ],
+    "date": "2024-06-30",
+    "domain_tags": [
+      "aerospace",
+      "materials_science"
+    ],
+    "raw_metadata": {
+      "patent_number": "12234567",
+      "num_claims": 14,
+      "forward_citations": 3,
+      "cpc_codes": [
+        "B64G1/58",
+        "C04B35/565",
+        "B33Y10/00"
+      ],
+      "assignees": [
+        "Georgia Institute of Technology"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 6.85,
+      "market_size": 5.69,
+      "trl": 10.0,
+      "competitive_landscape": 7.0,
+      "citation_momentum": 4.55,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.54,
+    "confidence_level": "high",
+    "acceleration_domain": "materials_science",
+    "acceleration_multiplier": 6.48,
+    "adjusted_composite_score": 48.86,
+    "acceleration_rationale": "Domain: Materials Science. AI compression factor: 6.0x. Current AI maturity: 60%. Acceleration trend: 1.8x. IP relevance to AI-acceleratable R&D: 100%. Multiplier: 6.48x. Precedents: GNoME (Google DeepMind) \u2014 2.2M new materials predicted.",
+    "relevance_score": 1.0,
+    "corporate_matches": [
+      {
+        "company": "3M",
+        "match_score": 53.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); Direct market relevance (materials science); High strategic value (TRL 10, 6.5x acceleration)",
+        "r_and_d_budget_billions": 1.9
+      },
+      {
+        "company": "Apple",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 10, 6.5x acceleration)",
+        "r_and_d_budget_billions": 29.9
+      },
+      {
+        "company": "Meta",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 10, 6.5x acceleration)",
+        "r_and_d_budget_billions": 35.3
+      },
+      {
+        "company": "IBM",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 10, 6.5x acceleration)",
+        "r_and_d_budget_billions": 6.6
+      },
+      {
+        "company": "Qualcomm",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 10, 6.5x acceleration)",
+        "r_and_d_budget_billions": 8.8
+      }
+    ]
+  },
+  {
+    "id": "USPTO-11890123",
+    "source": "uspto",
+    "title": "Solid-State Lithium Battery with AI-Designed Electrolyte",
+    "abstract": "A solid-state lithium battery incorporating a novel ceramic electrolyte composition discovered through machine learning-guided materials screening. The electrolyte demonstrates ionic conductivity of 10 mS/cm at room temperature, approaching liquid electrolyte performance while maintaining the safety advantages of solid-state design. The battery achieves 500 Wh/kg energy density with 80% capacity retention after 1000 cycles.",
+    "institution": "Stanford University",
+    "authors": [
+      "Michelle Chen",
+      "Ryan Park",
+      "David Kim"
+    ],
+    "date": "2024-02-14",
+    "domain_tags": [
+      "climate_energy",
+      "materials_science"
+    ],
+    "raw_metadata": {
+      "patent_number": "11890123",
+      "num_claims": 22,
+      "forward_citations": 31,
+      "cpc_codes": [
+        "H01M10/0562",
+        "H01M10/052",
+        "C04B35/00"
+      ],
+      "assignees": [
+        "Stanford University"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 7.3,
+      "market_size": 5.82,
+      "trl": 2.12,
+      "competitive_landscape": 7.0,
+      "citation_momentum": 9.47,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 8.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.26,
+    "confidence_level": "high",
+    "acceleration_domain": "materials_science",
+    "acceleration_multiplier": 5.477,
+    "adjusted_composite_score": 39.76,
+    "acceleration_rationale": "Domain: Materials Science. AI compression factor: 6.0x. Current AI maturity: 60%. Acceleration trend: 1.8x. IP relevance to AI-acceleratable R&D: 82%. Multiplier: 5.48x. Precedents: GNoME (Google DeepMind) \u2014 2.2M new materials predicted.",
+    "relevance_score": 0.817,
+    "corporate_matches": [
+      {
+        "company": "3M",
+        "match_score": 45.0,
+        "rationale": "Direct market relevance (materials science); High strategic value (TRL 2, 5.5x acceleration)",
+        "r_and_d_budget_billions": 1.9
+      },
+      {
+        "company": "Tesla",
+        "match_score": 35.0,
+        "rationale": "High strategic value (TRL 2, 5.5x acceleration)",
+        "r_and_d_budget_billions": 3.1
+      },
+      {
+        "company": "Google",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 5.5x acceleration)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Amazon",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 5.5x acceleration)",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "IBM",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 5.5x acceleration)",
+        "r_and_d_budget_billions": 6.6
+      }
+    ]
+  },
+  {
+    "id": "USPTO-11567890",
+    "source": "uspto",
+    "title": "CRISPR-Based Diagnostic Platform for Rapid Pathogen Detection",
+    "abstract": "A point-of-care diagnostic device that leverages CRISPR-Cas13 for rapid, multiplexed detection of respiratory pathogens including influenza, SARS-CoV-2, and RSV. The device uses lateral flow readout combined with isothermal amplification to deliver results in under 30 minutes without laboratory equipment. The platform demonstrated 98% sensitivity and 99% specificity in clinical validation with 500 patient samples.",
+    "institution": "Johns Hopkins University",
+    "authors": [
+      "Maria Santos",
+      "Kevin O'Brien",
+      "Priya Patel"
+    ],
+    "date": "2024-01-18",
+    "domain_tags": [
+      "medical_diagnostics",
+      "synthetic_biology"
+    ],
+    "raw_metadata": {
+      "patent_number": "11567890",
+      "num_claims": 32,
+      "forward_citations": 12,
+      "cpc_codes": [
+        "C12Q1/6886",
+        "G01N33/569",
+        "C12N15/113"
+      ],
+      "assignees": [
+        "Johns Hopkins University"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 8.75,
+      "market_size": 5.73,
+      "trl": 7.75,
+      "competitive_landscape": 7.0,
+      "citation_momentum": 7.21,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 8.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.73,
+    "confidence_level": "high",
+    "acceleration_domain": "medical_diagnostics",
+    "acceleration_multiplier": 4.979,
+    "adjusted_composite_score": 38.49,
+    "acceleration_rationale": "Domain: Medical Diagnostics. AI compression factor: 7.0x. Current AI maturity: 70%. Acceleration trend: 1.3x. IP relevance to AI-acceleratable R&D: 74%. Multiplier: 4.98x. Precedents: PathAI \u2014 computational pathology.",
+    "relevance_score": 0.741,
+    "corporate_matches": [
+      {
+        "company": "Roche",
+        "match_score": 50.0,
+        "rationale": "Direct market relevance (medical diagnostics); High strategic value (TRL 8, 5.0x acceleration)",
+        "r_and_d_budget_billions": 14.1
+      },
+      {
+        "company": "Google",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 8, 5.0x acceleration)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Microsoft",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 8, 5.0x acceleration)",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "Apple",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 8, 5.0x acceleration)",
+        "r_and_d_budget_billions": 29.9
+      },
+      {
+        "company": "Nvidia",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 8, 5.0x acceleration)",
+        "r_and_d_budget_billions": 7.3
+      }
+    ]
+  },
+  {
+    "id": "ARXIV-2024.12345",
+    "source": "arxiv",
+    "title": "Diffusion Models for De Novo Drug Design with Multi-Objective Optimization",
+    "abstract": "We present a diffusion-based generative model for de novo small molecule drug design that simultaneously optimizes for binding affinity, drug-likeness, and synthetic accessibility. Our model generates molecules conditioned on protein binding site geometry and achieves state-of-the-art performance on standard benchmarks. In prospective validation against three oncology targets, 60% of generated molecules showed sub-micromolar activity in biochemical assays.",
+    "institution": "Stanford University",
+    "authors": [
+      "Andrew Lee",
+      "Jessica Wu",
+      "Mark Thompson"
+    ],
+    "date": "2024-11-15",
+    "domain_tags": [
+      "drug_discovery",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "arxiv_id": "2024.12345",
+      "categories": [
+        "cs.LG",
+        "q-bio.BM"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2024.12345"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.74,
+      "defensibility": 6.0,
+      "market_size": 6.95,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 6.12,
+    "confidence_level": "high",
+    "acceleration_domain": "drug_discovery",
+    "acceleration_multiplier": 6.224,
+    "adjusted_composite_score": 38.09,
+    "acceleration_rationale": "Domain: Drug Discovery. AI compression factor: 8.0x. Current AI maturity: 70%. Acceleration trend: 1.5x. IP relevance to AI-acceleratable R&D: 71%. Multiplier: 6.22x. Precedents: AlphaFold2 \u2014 protein structure prediction.",
+    "relevance_score": 0.706,
+    "corporate_matches": [
+      {
+        "company": "IBM",
+        "match_score": 35.0,
+        "rationale": "High strategic value (TRL 2, 6.2x acceleration)",
+        "r_and_d_budget_billions": 6.6
+      },
+      {
+        "company": "Google",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 6.2x acceleration)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Microsoft",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 6.2x acceleration)",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "Amazon",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 6.2x acceleration)",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Meta",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 6.2x acceleration)",
+        "r_and_d_budget_billions": 35.3
+      }
+    ]
+  },
+  {
+    "id": "USPTO-12345678",
+    "source": "uspto",
+    "title": "Next-Generation mRNA Delivery System Using pH-Responsive Lipid Nanoparticles",
+    "abstract": "A lipid nanoparticle formulation for mRNA delivery featuring pH-responsive ionizable lipids designed through computational molecular dynamics screening. The nanoparticles achieve 10-fold improvement in endosomal escape efficiency and enable organ-selective mRNA delivery through surface ligand modifications. Demonstrated protein expression levels 5x higher than benchmark LNP formulations in non-human primate studies with favorable safety profile.",
+    "institution": "Columbia University",
+    "authors": [
+      "Diana Morrison",
+      "Frank Li",
+      "Grace Kim"
+    ],
+    "date": "2024-10-15",
+    "domain_tags": [
+      "drug_discovery",
+      "protein_engineering"
+    ],
+    "raw_metadata": {
+      "patent_number": "12345678",
+      "num_claims": 30,
+      "forward_citations": 14,
+      "cpc_codes": [
+        "A61K9/5123",
+        "A61K48/0008",
+        "C12N15/88"
+      ],
+      "assignees": [
+        "Columbia University"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 8.0,
+      "market_size": 6.7,
+      "trl": 7.75,
+      "competitive_landscape": 7.0,
+      "citation_momentum": 8.9,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 8.02,
+    "confidence_level": "high",
+    "acceleration_domain": "protein_engineering",
+    "acceleration_multiplier": 4.626,
+    "adjusted_composite_score": 37.1,
+    "acceleration_rationale": "Domain: Protein Engineering. AI compression factor: 9.0x. Current AI maturity: 80%. Acceleration trend: 1.5x. IP relevance to AI-acceleratable R&D: 37%. Multiplier: 4.63x. Precedents: ESMFold \u2014 fast protein structure prediction.",
+    "relevance_score": 0.37,
+    "corporate_matches": [
+      {
+        "company": "Qualcomm",
+        "match_score": 54.0,
+        "rationale": "Fills patent whitespace (3 CPC overlaps); High strategic value (TRL 8, 4.6x acceleration)",
+        "r_and_d_budget_billions": 8.8
+      },
+      {
+        "company": "Google",
+        "match_score": 49.0,
+        "rationale": "Fills patent whitespace (3 CPC overlaps); High strategic value (TRL 8, 4.6x acceleration)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Microsoft",
+        "match_score": 49.0,
+        "rationale": "Fills patent whitespace (3 CPC overlaps); High strategic value (TRL 8, 4.6x acceleration)",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "Nvidia",
+        "match_score": 49.0,
+        "rationale": "Fills patent whitespace (3 CPC overlaps); High strategic value (TRL 8, 4.6x acceleration)",
+        "r_and_d_budget_billions": 7.3
+      },
+      {
+        "company": "Intel",
+        "match_score": 49.0,
+        "rationale": "Fills patent whitespace (3 CPC overlaps); High strategic value (TRL 8, 4.6x acceleration)",
+        "r_and_d_budget_billions": 16.0
+      }
+    ]
+  },
+  {
+    "id": "ARXIV-2024.23456",
+    "source": "arxiv",
+    "title": "Foundation Model for Autonomous Robot Manipulation in Unstructured Environments",
+    "abstract": "We introduce RoboFoundation, a large vision-language-action model for robotic manipulation that generalizes across diverse objects, environments, and tasks without task-specific training. The model is pre-trained on 1M+ hours of manipulation demonstrations and fine-tuned with reinforcement learning. We demonstrate zero-shot transfer to novel objects with 85% success rate and rapid adaptation to new tasks within 10 demonstrations.",
+    "institution": "Carnegie Mellon University",
+    "authors": [
+      "Daniel Cho",
+      "Rachel Green",
+      "Amit Sharma"
+    ],
+    "date": "2024-10-08",
+    "domain_tags": [
+      "autonomous_systems",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "arxiv_id": "2024.23456",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2024.23456"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.73,
+      "defensibility": 6.0,
+      "market_size": 6.1,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 5.99,
+    "confidence_level": "high",
+    "acceleration_domain": "autonomous_systems",
+    "acceleration_multiplier": 5.348,
+    "adjusted_composite_score": 32.03,
+    "acceleration_rationale": "Domain: Autonomous Systems. AI compression factor: 6.0x. Current AI maturity: 70%. Acceleration trend: 1.4x. IP relevance to AI-acceleratable R&D: 89%. Multiplier: 5.35x. Precedents: Waymo/Cruise \u2014 autonomous driving perception.",
+    "relevance_score": 0.891,
+    "corporate_matches": [
+      {
+        "company": "IBM",
+        "match_score": 35.0,
+        "rationale": "High strategic value (TRL 2, 5.3x acceleration)",
+        "r_and_d_budget_billions": 6.6
+      },
+      {
+        "company": "Google",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 5.3x acceleration)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Microsoft",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 5.3x acceleration)",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "Amazon",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 5.3x acceleration)",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Meta",
+        "match_score": 30.0,
+        "rationale": "High strategic value (TRL 2, 5.3x acceleration)",
+        "r_and_d_budget_billions": 35.3
+      }
+    ]
+  },
+  {
+    "id": "USPTO-11901234",
+    "source": "uspto",
+    "title": "Privacy-Preserving Federated Learning Framework for Medical Imaging",
+    "abstract": "A federated learning framework that enables collaborative training of medical imaging AI models across hospitals without sharing patient data. The system incorporates differential privacy guarantees, secure aggregation protocols, and model watermarking for intellectual property protection. Validated across 12 hospital sites for chest X-ray classification, achieving performance within 2% of centralized training while maintaining strict HIPAA compliance.",
+    "institution": "Carnegie Mellon University",
+    "authors": [
+      "Laura Nguyen",
+      "Eric Johnson",
+      "Maya Gupta"
+    ],
+    "date": "2024-07-22",
+    "domain_tags": [
+      "ai_ml",
+      "medical_diagnostics",
+      "cybersecurity"
+    ],
+    "raw_metadata": {
+      "patent_number": "11901234",
+      "num_claims": 26,
+      "forward_citations": 9,
+      "cpc_codes": [
+        "G06N20/00",
+        "G16H30/40",
+        "H04L9/00"
+      ],
+      "assignees": [
+        "Carnegie Mellon University"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 8.65,
+      "market_size": 6.84,
+      "trl": 5.5,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 7.16,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.51,
+    "confidence_level": "high",
+    "acceleration_domain": "medical_diagnostics",
+    "acceleration_multiplier": 3.792,
+    "adjusted_composite_score": 28.48,
+    "acceleration_rationale": "Domain: Medical Diagnostics. AI compression factor: 7.0x. Current AI maturity: 70%. Acceleration trend: 1.3x. IP relevance to AI-acceleratable R&D: 52%. Multiplier: 3.79x. Precedents: PathAI \u2014 computational pathology.",
+    "relevance_score": 0.52,
+    "corporate_matches": [
+      {
+        "company": "Roche",
+        "match_score": 61.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); Direct market relevance (medical diagnostics); High strategic value (TRL 6, 3.8x acceleration)",
+        "r_and_d_budget_billions": 14.1
+      },
+      {
+        "company": "Pfizer",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 6, 3.8x acceleration)",
+        "r_and_d_budget_billions": 11.4
+      },
+      {
+        "company": "Moderna",
+        "match_score": 41.0,
+        "rationale": "Fills patent whitespace (2 CPC overlaps); High strategic value (TRL 6, 3.8x acceleration)",
+        "r_and_d_budget_billions": 4.8
+      },
+      {
+        "company": "Nvidia",
+        "match_score": 38.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 6, 3.8x acceleration)",
+        "r_and_d_budget_billions": 7.3
+      },
+      {
+        "company": "IBM",
+        "match_score": 38.0,
+        "rationale": "High strategic value (TRL 6, 3.8x acceleration)",
+        "r_and_d_budget_billions": 6.6
+      }
+    ]
+  },
+  {
+    "id": "USPTO-11345678",
+    "source": "uspto",
+    "title": "Autonomous Catalyst Discovery Platform Using Bayesian Optimization",
+    "abstract": "An automated laboratory system for discovering novel catalysts for green hydrogen production through water electrolysis. The platform combines robotic sample preparation, high-throughput electrochemical testing, and Bayesian optimization to efficiently explore catalyst composition space. The system identified several non-precious metal catalysts with performance exceeding platinum-based benchmarks, demonstrating potential for reducing hydrogen production costs by 40%.",
+    "institution": "Stanford University",
+    "authors": [
+      "Emily Zhang",
+      "Robert Kim",
+      "Lisa Wang"
+    ],
+    "date": "2024-03-22",
+    "domain_tags": [
+      "climate_energy",
+      "materials_science",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "patent_number": "11345678",
+      "num_claims": 18,
+      "forward_citations": 8,
+      "cpc_codes": [
+        "C25B1/04",
+        "B01J23/00",
+        "G06N7/01"
+      ],
+      "assignees": [
+        "Stanford University"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 7.45,
+      "market_size": 6.61,
+      "trl": 10.0,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 6.25,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 8.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.66,
+    "confidence_level": "high",
+    "acceleration_domain": "climate_energy",
+    "acceleration_multiplier": 3.0,
+    "adjusted_composite_score": 22.98,
+    "acceleration_rationale": "Domain: Climate Energy. AI compression factor: 5.0x. Current AI maturity: 40%. Acceleration trend: 1.6x. IP relevance to AI-acceleratable R&D: 91%. Multiplier: 3.00x. Precedents: DeepMind \u2014 AI for wind farm optimization.",
+    "relevance_score": 0.909,
+    "corporate_matches": [
+      {
+        "company": "Siemens",
+        "match_score": 53.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); Direct market relevance (climate energy); High strategic value (TRL 10, 3.0x acceleration)",
+        "r_and_d_budget_billions": 6.2
+      },
+      {
+        "company": "Tesla",
+        "match_score": 45.0,
+        "rationale": "Direct market relevance (climate energy); High strategic value (TRL 10, 3.0x acceleration)",
+        "r_and_d_budget_billions": 3.1
+      },
+      {
+        "company": "3M",
+        "match_score": 38.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 10, 3.0x acceleration)",
+        "r_and_d_budget_billions": 1.9
+      },
+      {
+        "company": "Pfizer",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 10, 3.0x acceleration)",
+        "r_and_d_budget_billions": 11.4
+      },
+      {
+        "company": "Johnson & Johnson",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 10, 3.0x acceleration)",
+        "r_and_d_budget_billions": 14.6
+      }
+    ]
+  },
+  {
+    "id": "ARXIV-2024.34567",
+    "source": "arxiv",
+    "title": "Large Language Models for Automated Vulnerability Discovery in Source Code",
+    "abstract": "We present SecureLLM, a large language model fine-tuned for automated security vulnerability discovery in source code. The model is trained on 2M+ labeled code snippets spanning 15 vulnerability categories from the CWE database. SecureLLM achieves 92% precision and 87% recall on held-out test sets, outperforming existing static analysis tools by 35% in false-positive-adjusted detection rate. We demonstrate practical deployment in CI/CD pipelines processing 10,000+ commits per day.",
+    "institution": "Massachusetts Institute of Technology",
+    "authors": [
+      "Brian Martinez",
+      "Kelly Wong"
+    ],
+    "date": "2024-12-01",
+    "domain_tags": [
+      "cybersecurity",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "arxiv_id": "2024.34567",
+      "categories": [
+        "cs.CR",
+        "cs.SE",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2024.34567"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.77,
+      "defensibility": 6.0,
+      "market_size": 6.15,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 6.0,
+    "confidence_level": "high",
+    "acceleration_domain": "cybersecurity",
+    "acceleration_multiplier": 2.814,
+    "adjusted_composite_score": 16.89,
+    "acceleration_rationale": "Domain: Cybersecurity. AI compression factor: 5.0x. Current AI maturity: 60%. Acceleration trend: 1.4x. IP relevance to AI-acceleratable R&D: 57%. Multiplier: 2.81x. Precedents: CrowdStrike \u2014 AI threat detection.",
+    "relevance_score": 0.567,
+    "corporate_matches": [
+      {
+        "company": "IBM",
+        "match_score": 27.91,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 6.6
+      },
+      {
+        "company": "Microsoft",
+        "match_score": 22.91,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "Google",
+        "match_score": 19.91,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Amazon",
+        "match_score": 19.91,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Meta",
+        "match_score": 19.91,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 35.3
+      }
+    ]
+  },
+  {
+    "id": "USPTO-12123456",
+    "source": "uspto",
+    "title": "GaN Power Semiconductor with AI-Optimized Device Architecture",
+    "abstract": "A gallium nitride power semiconductor device featuring an architecture optimized through neural network-guided design space exploration. The device achieves breakdown voltage of 1200V with on-resistance of 25 m\u03a9\u00b7cm\u00b2, representing a 40% improvement in the Baliga figure of merit compared to commercial GaN devices. The AI-optimized field plate geometry and buffer layer composition reduce current collapse to less than 5%.",
+    "institution": "Massachusetts Institute of Technology",
+    "authors": [
+      "Jason Wu",
+      "Sandra Kim",
+      "Paolo Romano"
+    ],
+    "date": "2024-11-08",
+    "domain_tags": [
+      "semiconductor"
+    ],
+    "raw_metadata": {
+      "patent_number": "12123456",
+      "num_claims": 19,
+      "forward_citations": 7,
+      "cpc_codes": [
+        "H01L29/778",
+        "H01L29/205",
+        "G06N3/08"
+      ],
+      "assignees": [
+        "Massachusetts Institute of Technology"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 6.85,
+      "market_size": 6.44,
+      "trl": 10.0,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 7.05,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.71,
+    "confidence_level": "high",
+    "acceleration_domain": "semiconductor",
+    "acceleration_multiplier": 1.773,
+    "adjusted_composite_score": 13.67,
+    "acceleration_rationale": "Domain: Semiconductor. AI compression factor: 4.0x. Current AI maturity: 50%. Acceleration trend: 1.3x. IP relevance to AI-acceleratable R&D: 48%. Multiplier: 1.77x. Precedents: Google AI chip design (Nature 2021).",
+    "relevance_score": 0.483,
+    "corporate_matches": [
+      {
+        "company": "TSMC",
+        "match_score": 56.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); Direct market relevance (semiconductor); High strategic value (TRL 10, 1.8x acceleration)",
+        "r_and_d_budget_billions": 5.5
+      },
+      {
+        "company": "Apple",
+        "match_score": 53.0,
+        "rationale": "Direct market relevance (semiconductor); High strategic value (TRL 10, 1.8x acceleration)",
+        "r_and_d_budget_billions": 29.9
+      },
+      {
+        "company": "Nvidia",
+        "match_score": 53.0,
+        "rationale": "Direct market relevance (semiconductor); High strategic value (TRL 10, 1.8x acceleration)",
+        "r_and_d_budget_billions": 7.3
+      },
+      {
+        "company": "Intel",
+        "match_score": 53.0,
+        "rationale": "Direct market relevance (semiconductor); High strategic value (TRL 10, 1.8x acceleration)",
+        "r_and_d_budget_billions": 16.0
+      },
+      {
+        "company": "Samsung",
+        "match_score": 53.0,
+        "rationale": "Direct market relevance (semiconductor); High strategic value (TRL 10, 1.8x acceleration)",
+        "r_and_d_budget_billions": 22.4
+      }
+    ]
+  },
+  {
+    "id": "USPTO-11678901",
+    "source": "uspto",
+    "title": "Neuromorphic Computing Architecture for Edge AI Applications",
+    "abstract": "A novel neuromorphic processor architecture that implements spiking neural networks in silicon for ultra-low-power edge AI applications. The chip achieves 100x energy efficiency improvement over conventional GPUs for inference tasks while maintaining competitive accuracy on standard benchmarks. The architecture supports on-chip learning through spike-timing-dependent plasticity, enabling continuous adaptation in deployment.",
+    "institution": "University of Michigan",
+    "authors": [
+      "Thomas Brown",
+      "Wei Lin",
+      "Jennifer Adams"
+    ],
+    "date": "2024-05-03",
+    "domain_tags": [
+      "semiconductor",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "patent_number": "11678901",
+      "num_claims": 28,
+      "forward_citations": 19,
+      "cpc_codes": [
+        "G06N3/063",
+        "H01L27/00",
+        "G06F15/80"
+      ],
+      "assignees": [
+        "University of Michigan"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 8.75,
+      "market_size": 6.44,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 9.01,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.3,
+    "confidence_level": "high",
+    "acceleration_domain": "semiconductor",
+    "acceleration_multiplier": 1.773,
+    "adjusted_composite_score": 12.94,
+    "acceleration_rationale": "Domain: Semiconductor. AI compression factor: 4.0x. Current AI maturity: 50%. Acceleration trend: 1.3x. IP relevance to AI-acceleratable R&D: 48%. Multiplier: 1.77x. Precedents: Google AI chip design (Nature 2021).",
+    "relevance_score": 0.483,
+    "corporate_matches": [
+      {
+        "company": "TSMC",
+        "match_score": 40.4,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); Direct market relevance (semiconductor)",
+        "r_and_d_budget_billions": 5.5
+      },
+      {
+        "company": "Nvidia",
+        "match_score": 37.4,
+        "rationale": "Direct market relevance (semiconductor)",
+        "r_and_d_budget_billions": 7.3
+      },
+      {
+        "company": "Intel",
+        "match_score": 37.4,
+        "rationale": "Direct market relevance (semiconductor)",
+        "r_and_d_budget_billions": 16.0
+      },
+      {
+        "company": "Qualcomm",
+        "match_score": 34.4,
+        "rationale": "Direct market relevance (semiconductor)",
+        "r_and_d_budget_billions": 8.8
+      },
+      {
+        "company": "Merck",
+        "match_score": 33.4,
+        "rationale": "Fills patent whitespace (3 CPC overlaps)",
+        "r_and_d_budget_billions": 13.5
+      }
+    ]
+  },
+  {
+    "id": "USPTO-11456789",
+    "source": "uspto",
+    "title": "Quantum Error Correction Code for Topological Qubit Arrays",
+    "abstract": "A novel quantum error correction scheme designed for topological qubit architectures that achieves fault tolerance with fewer physical qubits than existing surface codes. The method uses a hierarchical decoding algorithm that reduces classical computational overhead while maintaining error thresholds suitable for practical quantum computation. Demonstrated in simulation with 99.9% logical error suppression using only 49 physical qubits per logical qubit.",
+    "institution": "California Institute of Technology",
+    "authors": [
+      "James Liu",
+      "Anna Petrova"
+    ],
+    "date": "2024-08-10",
+    "domain_tags": [
+      "quantum_computing"
+    ],
+    "raw_metadata": {
+      "patent_number": "11456789",
+      "num_claims": 15,
+      "forward_citations": 22,
+      "cpc_codes": [
+        "G06N10/70",
+        "H03M13/00"
+      ],
+      "assignees": [
+        "California Institute of Technology"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 6.25,
+      "market_size": 5.9,
+      "trl": 7.75,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 9.36,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 7.57,
+    "confidence_level": "high",
+    "acceleration_domain": "quantum_computing",
+    "acceleration_multiplier": 1.53,
+    "adjusted_composite_score": 11.58,
+    "acceleration_rationale": "Domain: Quantum Computing. AI compression factor: 3.0x. Current AI maturity: 30%. Acceleration trend: 1.7x. IP relevance to AI-acceleratable R&D: 100%. Multiplier: 1.53x. Precedents: Google Quantum AI \u2014 error correction advances.",
+    "relevance_score": 1.0,
+    "corporate_matches": [
+      {
+        "company": "Intel",
+        "match_score": 45.0,
+        "rationale": "Direct market relevance (quantum computing); High strategic value (TRL 8, 1.5x acceleration)",
+        "r_and_d_budget_billions": 16.0
+      },
+      {
+        "company": "Pfizer",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 8, 1.5x acceleration)",
+        "r_and_d_budget_billions": 11.4
+      },
+      {
+        "company": "Johnson & Johnson",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 8, 1.5x acceleration)",
+        "r_and_d_budget_billions": 14.6
+      },
+      {
+        "company": "Merck",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 8, 1.5x acceleration)",
+        "r_and_d_budget_billions": 13.5
+      },
+      {
+        "company": "3M",
+        "match_score": 33.0,
+        "rationale": "Fills patent whitespace (1 CPC overlaps); High strategic value (TRL 8, 1.5x acceleration)",
+        "r_and_d_budget_billions": 1.9
+      }
+    ]
+  },
+  {
+    "id": "NIH-R01HL190004",
+    "source": "nih",
+    "title": "Wearable Biosensor Array for Continuous Cardiac Biomarker Monitoring",
+    "abstract": "Development of a flexible, wearable biosensor array for continuous real-time monitoring of cardiac biomarkers including troponin, BNP, and CRP through interstitial fluid sampling via microneedle extraction. The device integrates aptamer-based electrochemical sensors with on-chip signal processing and wireless data transmission. Machine learning algorithms analyze temporal biomarker patterns to predict cardiac events 6-12 hours before clinical presentation.",
+    "institution": "University of Michigan",
+    "authors": [
+      "Catherine Blake",
+      "Omar Hassan"
+    ],
+    "date": "2024-03-01",
+    "domain_tags": [
+      "medical_diagnostics",
+      "materials_science"
+    ],
+    "raw_metadata": {
+      "project_num": "R01HL190004",
+      "activity_code": "R01",
+      "award_amount": 3100000,
+      "project_start_date": "2024-03-01",
+      "project_end_date": "2028-02-28",
+      "spending_categories": null,
+      "organization": "University of Michigan"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.7,
+      "defensibility": 6.0,
+      "market_size": 5.57,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 6.0
+    },
+    "composite_score": 5.7,
+    "confidence_level": "high",
+    "acceleration_domain": "telecom",
+    "acceleration_multiplier": 1.98,
+    "adjusted_composite_score": 11.29,
+    "acceleration_rationale": "Domain: Telecom. AI compression factor: 3.5x. Current AI maturity: 50%. Acceleration trend: 1.2x. IP relevance to AI-acceleratable R&D: 89%. Multiplier: 1.98x. Precedents: DeepMind \u2014 network optimization for 5G.",
+    "relevance_score": 0.891,
+    "corporate_matches": [
+      {
+        "company": "Roche",
+        "match_score": 20.49,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 14.1
+      },
+      {
+        "company": "Google",
+        "match_score": 15.49,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Apple",
+        "match_score": 15.49,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 29.9
+      },
+      {
+        "company": "Amazon",
+        "match_score": 15.49,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Pfizer",
+        "match_score": 15.49,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 11.4
+      }
+    ]
+  },
+  {
+    "id": "USPTO-12012345",
+    "source": "uspto",
+    "title": "Biodegradable Microelectronics for Precision Agriculture Soil Monitoring",
+    "abstract": "A biodegradable wireless sensor system for continuous soil health monitoring in precision agriculture applications. The sensors measure soil moisture, nutrient levels, pH, and microbial activity with millimeter-scale spatial resolution. Fabricated from silk fibroin and zinc oxide, the devices fully decompose within one growing season, eliminating electronic waste. The system includes a mesh networking protocol optimized for underground RF propagation.",
+    "institution": "University of Wisconsin",
+    "authors": [
+      "Patricia Lee",
+      "Hiroshi Tanaka"
+    ],
+    "date": "2024-04-30",
+    "domain_tags": [
+      "agriculture",
+      "materials_science"
+    ],
+    "raw_metadata": {
+      "patent_number": "12012345",
+      "num_claims": 16,
+      "forward_citations": 4,
+      "cpc_codes": [
+        "A01G25/167",
+        "H04W84/18",
+        "G01N33/24"
+      ],
+      "assignees": [
+        "University of Wisconsin"
+      ]
+    },
+    "dimension_scores": {
+      "technical_novelty": 10.0,
+      "defensibility": 7.15,
+      "market_size": 6.65,
+      "trl": 2.12,
+      "competitive_landscape": 7.0,
+      "citation_momentum": 4.83,
+      "inventor_quality": 4.0,
+      "fto_risk": 9.0,
+      "patent_life": 9.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 6.96,
+    "confidence_level": "high",
+    "acceleration_domain": "agriculture",
+    "acceleration_multiplier": 1.593,
+    "adjusted_composite_score": 11.09,
+    "acceleration_rationale": "Domain: Agriculture. AI compression factor: 4.0x. Current AI maturity: 30%. Acceleration trend: 1.5x. IP relevance to AI-acceleratable R&D: 74%. Multiplier: 1.59x. Precedents: John Deere \u2014 AI-powered precision agriculture.",
+    "relevance_score": 0.741,
+    "corporate_matches": [
+      {
+        "company": "Apple",
+        "match_score": 18.44,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 29.9
+      },
+      {
+        "company": "Qualcomm",
+        "match_score": 18.44,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 8.8
+      },
+      {
+        "company": "Nvidia",
+        "match_score": 16.44,
+        "rationale": "Fills patent whitespace (1 CPC overlaps)",
+        "r_and_d_budget_billions": 7.3
+      },
+      {
+        "company": "Pfizer",
+        "match_score": 16.44,
+        "rationale": "Fills patent whitespace (1 CPC overlaps)",
+        "r_and_d_budget_billions": 11.4
+      },
+      {
+        "company": "Moderna",
+        "match_score": 16.44,
+        "rationale": "Fills patent whitespace (1 CPC overlaps)",
+        "r_and_d_budget_billions": 4.8
+      }
+    ]
+  },
+  {
+    "id": "ARXIV-2024.45678",
+    "source": "arxiv",
+    "title": "Scalable Quantum Machine Learning for Financial Portfolio Optimization",
+    "abstract": "We demonstrate a hybrid quantum-classical algorithm for portfolio optimization that scales to 1000+ assets using variational quantum eigensolver with problem-specific ansatz design. Our approach achieves solutions within 0.5% of the classical optimum while showing polynomial speedup potential on near-term quantum hardware. Backtesting on 10 years of S&P 500 data shows 2.3% annual alpha improvement over classical mean-variance optimization.",
+    "institution": "Columbia University",
+    "authors": [
+      "Alexander Petrov",
+      "Diana Chang"
+    ],
+    "date": "2024-08-20",
+    "domain_tags": [
+      "quantum_computing",
+      "financial",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "arxiv_id": "2024.45678",
+      "categories": [
+        "quant-ph",
+        "q-fin.PM",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2024.45678"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.71,
+      "defensibility": 7.5,
+      "market_size": 6.21,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 8.0
+    },
+    "composite_score": 6.15,
+    "confidence_level": "high",
+    "acceleration_domain": "quantum_computing",
+    "acceleration_multiplier": 1.332,
+    "adjusted_composite_score": 8.19,
+    "acceleration_rationale": "Domain: Quantum Computing. AI compression factor: 3.0x. Current AI maturity: 30%. Acceleration trend: 1.7x. IP relevance to AI-acceleratable R&D: 63%. Multiplier: 1.33x. Precedents: Google Quantum AI \u2014 error correction advances.",
+    "relevance_score": 0.626,
+    "corporate_matches": [
+      {
+        "company": "Intel",
+        "match_score": 27.06,
+        "rationale": "Direct market relevance (quantum computing)",
+        "r_and_d_budget_billions": 16.0
+      },
+      {
+        "company": "Google",
+        "match_score": 17.06,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Amazon",
+        "match_score": 17.06,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Microsoft",
+        "match_score": 12.06,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "Meta",
+        "match_score": 12.06,
+        "rationale": "Low match \u2014 minimal technology overlap",
+        "r_and_d_budget_billions": 35.3
+      }
+    ]
+  },
+  {
+    "id": "NIH-R01AI170001",
+    "source": "nih",
+    "title": "AI-Guided mRNA Vaccine Design for Emerging Infectious Diseases",
+    "abstract": "This project develops an artificial intelligence platform for rapid design and optimization of mRNA vaccine candidates against emerging infectious diseases. The system integrates protein structure prediction, immune epitope mapping, and codon optimization using deep learning to generate vaccine constructs within 48 hours of pathogen sequence availability. The platform will be validated against three emerging viral threats identified by WHO priority pathogen list.",
+    "institution": "Columbia University",
+    "authors": [
+      "Helen Park",
+      "Christopher Davis"
+    ],
+    "date": "2024-04-01",
+    "domain_tags": [
+      "drug_discovery",
+      "protein_engineering",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "project_num": "R01AI170001",
+      "activity_code": "R01",
+      "award_amount": 2500000,
+      "project_start_date": "2024-04-01",
+      "project_end_date": "2029-03-31",
+      "spending_categories": null,
+      "organization": "Columbia University"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.69,
+      "defensibility": 7.5,
+      "market_size": 7.12,
+      "trl": 5.5,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 6.0
+    },
+    "composite_score": 6.42,
+    "confidence_level": "high",
+    "acceleration_domain": "ai_ml",
+    "acceleration_multiplier": 0.644,
+    "adjusted_composite_score": 4.13,
+    "acceleration_rationale": "Domain: Ai Ml. AI compression factor: 2.0x. Current AI maturity: 30%. Acceleration trend: 1.0x. IP relevance to AI-acceleratable R&D: 89%. Multiplier: 0.64x. Precedents: General-purpose AI assistance.",
+    "relevance_score": 0.891,
+    "corporate_matches": [
+      {
+        "company": "Microsoft",
+        "match_score": 33.86,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "IBM",
+        "match_score": 33.86,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 6.6
+      },
+      {
+        "company": "Google",
+        "match_score": 28.86,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Amazon",
+        "match_score": 28.86,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Meta",
+        "match_score": 28.86,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 35.3
+      }
+    ]
+  },
+  {
+    "id": "NIH-U01CA210003",
+    "source": "nih",
+    "title": "AI-Powered Multimodal Cancer Early Detection Platform",
+    "abstract": "Development of an artificial intelligence platform integrating liquid biopsy proteomics, cell-free DNA methylation profiling, and clinical imaging for multi-cancer early detection. The system employs transformer-based models trained on longitudinal data from 50,000 participants to identify cancer signals across 12 organ sites at stage I/II with 95% specificity. This project aims to validate the platform in a prospective study of 10,000 average-risk adults.",
+    "institution": "Johns Hopkins University",
+    "authors": [
+      "Robert Chen",
+      "Amanda Foster",
+      "William Park"
+    ],
+    "date": "2024-09-01",
+    "domain_tags": [
+      "medical_diagnostics",
+      "ai_ml"
+    ],
+    "raw_metadata": {
+      "project_num": "U01CA210003",
+      "activity_code": "U01",
+      "award_amount": 5200000,
+      "project_start_date": "2024-09-01",
+      "project_end_date": "2029-08-31",
+      "spending_categories": null,
+      "organization": "Johns Hopkins University"
+    },
+    "dimension_scores": {
+      "technical_novelty": 9.71,
+      "defensibility": 6.0,
+      "market_size": 6.22,
+      "trl": 2.12,
+      "competitive_landscape": 5.0,
+      "citation_momentum": 5.0,
+      "inventor_quality": 3.0,
+      "fto_risk": 6.0,
+      "patent_life": 5.0,
+      "licensing_complexity": 6.0
+    },
+    "composite_score": 5.8,
+    "confidence_level": "high",
+    "acceleration_domain": "ai_ml",
+    "acceleration_multiplier": 0.644,
+    "adjusted_composite_score": 3.73,
+    "acceleration_rationale": "Domain: Ai Ml. AI compression factor: 2.0x. Current AI maturity: 30%. Acceleration trend: 1.0x. IP relevance to AI-acceleratable R&D: 89%. Multiplier: 0.64x. Precedents: General-purpose AI assistance.",
+    "relevance_score": 0.891,
+    "corporate_matches": [
+      {
+        "company": "Microsoft",
+        "match_score": 28.41,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 27.2
+      },
+      {
+        "company": "IBM",
+        "match_score": 28.41,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 6.6
+      },
+      {
+        "company": "Google",
+        "match_score": 23.41,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 39.5
+      },
+      {
+        "company": "Amazon",
+        "match_score": 23.41,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 73.2
+      },
+      {
+        "company": "Meta",
+        "match_score": 23.41,
+        "rationale": "Direct market relevance (ai ml)",
+        "r_and_d_budget_billions": 35.3
+      }
+    ]
+  }
+]
