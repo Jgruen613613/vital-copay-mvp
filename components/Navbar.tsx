@@ -5,15 +5,20 @@ import { useState } from "react";
 const NAV_LINKS = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Check Savings", href: "#check-savings" },
-  { label: "Coming Soon", href: "#coming-soon" },
+  { label: "$0 Copay", href: "/zero-copay", isPage: true },
+  { label: "Symptom Tracker", href: "/tracker", isPage: true },
   { label: "About", href: "#about" },
 ];
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function scrollTo(href: string) {
+  function navigate(href: string, isPage?: boolean) {
     setMenuOpen(false);
+    if (isPage) {
+      window.location.href = href;
+      return;
+    }
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -24,7 +29,7 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <button
-          onClick={() => scrollTo("#hero")}
+          onClick={() => navigate("#hero")}
           className="text-xl font-bold text-[#1a365d]"
         >
           VITAL Health
@@ -35,7 +40,7 @@ export function Navbar() {
           {NAV_LINKS.map((link) => (
             <button
               key={link.href}
-              onClick={() => scrollTo(link.href)}
+              onClick={() => navigate(link.href, (link as any).isPage)}
               className="text-sm text-gray-600 hover:text-[#1a365d] font-medium transition-colors"
             >
               {link.label}
@@ -65,7 +70,7 @@ export function Navbar() {
           {NAV_LINKS.map((link) => (
             <button
               key={link.href}
-              onClick={() => scrollTo(link.href)}
+              onClick={() => navigate(link.href, (link as any).isPage)}
               className="block w-full text-left py-3 text-gray-600 hover:text-[#1a365d] font-medium border-b border-gray-50 last:border-b-0"
             >
               {link.label}
